@@ -26,7 +26,7 @@
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
 from flask import Flask, render_template, request, send_file, g, \
-	send_from_directory, Response, abort, session, redirect, url_for, make_response
+    send_from_directory, Response, abort, session, redirect, url_for, make_response
 from flask.ext.assets import Environment, YAMLLoader
 from flask.ext.babel import Babel
 
@@ -47,10 +47,15 @@ babel = Babel(app)
 # -----------------------------------------------------------------------------
 @app.route('/')
 def index():
-	g.language = "en"
-	response = make_response(render_template('home.html'))
-	return response
+    g.language = "en"
+    response = make_response(render_template('partials/home.html'))
+    return response
 
+@app.route('/webcam')
+def webcam():
+    g.language = "en"
+    response = make_response(render_template('partials/webcam.html'))
+    return response
 # -----------------------------------------------------------------------------
 #
 #    UTILS
@@ -58,17 +63,17 @@ def index():
 # -----------------------------------------------------------------------------
 @babel.localeselector
 def get_locale():
-	# try to guess the language from the user accept
-	# header the browser transmits.
-	if not g.get("language"):
-		g.language = request.accept_languages.best_match(['en', 'fr', 'de'])
-	return g.get("language")
+    # try to guess the language from the user accept
+    # header the browser transmits.
+    if not g.get("language"):
+        g.language = request.accept_languages.best_match(['en', 'fr', 'de'])
+    return g.get("language")
 
 @app.template_filter('relative_url')
 def relative_url_filter(s):
-	if s.startswith(app.static_url_path):
-		return s[1:]
-	return s
+    if s.startswith(app.static_url_path):
+        return s[1:]
+    return s
 
 # -----------------------------------------------------------------------------
 #
@@ -76,7 +81,7 @@ def relative_url_filter(s):
 #
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
-	# run application
-	app.run(extra_files=("assets.yaml",), host="0.0.0.0")
+    # run application
+    app.run(extra_files=("assets.yaml",), host="0.0.0.0")
 
 # EOF
