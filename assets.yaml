@@ -1,0 +1,40 @@
+---
+css_all: 
+  output: gen/style.css
+  filters: cssmin
+  contents:
+    - contents:
+      - "../assets/scss/base.scss"
+      filters: scss
+      depends: "../assets/**/*.scss"
+      output: gen/sass.css
+      debug : false
+
+js_all:
+  output: gen/scripts.js
+  filters: jsmin
+  contents:
+    - "../static/vendors/modernizr.js"
+    - "../static/vendors/jquery.min.js"
+    - "../static/vendors/underscore.js"
+    - "../static/vendors/bootstrap-3.2.0/js/bootstrap.min.js"
+    - "../static/vendors/knockout-3.1.0.js"
+    - "../static/vendors/fastclick.js"
+    # - "../assets/vendors/d3.js"
+    # - "../assets/vendors/queue.js"
+    # - "../assets/vendors/raf.js"
+    # - "../assets/vendors/topojson.js"
+    - "../static/vendors/jquery.preload.js"
+    # - "../assets/vendors/jquery.easing.1.3.js"
+    # - "../assets/vendors/jquery.easing.compatibility.js"
+    - "../static/vendors/chroma.js"
+    - "../static/vendors/foundation.min.js"
+    # - "../assets/vendors/jquery.qtip.js"
+    - contents:
+      - "../assets/vendors/serious-toolkit/utils.coffee"
+      - "../assets/vendors/serious-toolkit/widget.coffee"
+      - "../assets/coffee/navigation.coffee"
+      output: gen/coffee.js
+      filters: coffeescript
+
+# EOF

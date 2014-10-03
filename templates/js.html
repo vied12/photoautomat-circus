@@ -1,0 +1,8 @@
+{% assets "js_all" %}
+<script type='text/javascript' src='{{ ASSET_URL  | relative_url }}'></script>
+{% endassets %}
+{% block extra_js %}{% endblock %}
+<script>
+	serious.Widget.bindAll();
+	$(document).foundation();
+</script>
