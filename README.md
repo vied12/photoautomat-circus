@@ -13,8 +13,8 @@ sudo pip install virtualenv
 
 **2.  Download the project**
 ```bash
-git clone git@github.com:vied12/photo-booth.git
-cd compass-productions
+git clone git@github.com:vied12/photoautomat-circus.git
+cd photoautomat-circus
 ```
 
 **3. Install**
