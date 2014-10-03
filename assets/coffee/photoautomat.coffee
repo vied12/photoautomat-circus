@@ -40,10 +40,28 @@ class Photoautomat extends serious.Widget
         @sayCheese.start()
 
     onSnapshotTaken: (canvas) =>
+        # to b&w
+        context    = canvas.getContext("2d")
+        image_data = context.getImageData(0, 0, @CONFIG.default_size[0], @CONFIG.default_size[1])
+        pix        = image_data.data
+        i          = 0
+        n          = pix.length
+        while i < n
+            grayscale  = pix[i] * .3 + pix[i + 1] * .59 + pix[i + 2] * .11
+            pix[i]     = grayscale # red
+            pix[i + 1] = grayscale # green
+            pix[i + 2] = grayscale # blue
+            i += 4
+        # alpha
+        context.putImageData image_data, 0, 0
         @callback(canvas)
         @callback = null
+        image = new Image()
+        image.src = canvas.toDataURL("image/png")
+        @ui.append(image)
 
     takeSnapshot: (callback) =>
+        callback = (->) unless canvas?
         @callback = callback
         if @is_ready
             @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
