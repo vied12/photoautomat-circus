@@ -42,14 +42,15 @@ class window.serious.Widget
 		else
 			widget_class = Widget.getWidgetClass(ui)
 			if widget_class?
-				widget = new widget_class()
+				widget                = new widget_class()
 				widget_class.Instance = widget
-				widget.scope = {}
-				widget.ui    = $(ui)
+				widget.scope          = {}
+				widget.ui             = $(ui)
+				widget.ko             = false
 				widget.bindUI(ui)
 				widget._bindUI(ui)
 				# use http://knockoutjs.com as template manager
-				ko.applyBindings(widget.scope, ui.get(0)) if ko?
+				ko.applyBindings(widget.scope, ui.get(0)) if ko? and widget.ko
 				return widget
 			else
 				console.warn("widget not found for", ui)

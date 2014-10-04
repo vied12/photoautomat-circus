@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="Navigation widget" data-widget="Navigation"></div>
+<div class="Navigation widget" data-widget="Navigation">
 
-{% include "partials/kino.html" %}
-{% include "partials/photoautomat.html" %}
+	{% include "partials/loader.html" %}
+	{% include "partials/kino.html" %}
+	{% include "partials/photoautomat.html" %}
+</div>
+
+<!-- screens -->
 
 {% endblock %}

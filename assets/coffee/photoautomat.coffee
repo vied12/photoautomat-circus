@@ -35,7 +35,7 @@ class Photoautomat extends serious.Widget
         @is_ready = no
 
     bindUI: =>
-        console.log "pouet"
+        @ko = yes # enable KO
         that = this
         # define scope
         @scope.takeSnapshot = @takeSnapshot
