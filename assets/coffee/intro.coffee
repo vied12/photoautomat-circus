@@ -38,9 +38,9 @@ class Intro extends serious.Widget
         @cancel = no
          # start the introduction video and wait to the end to go to the next screen
         # start the video
-        @player.api("play")
         @player.addEvent 'finish' , =>
             @navigation.nextScreen unless @cancel
+        @player.api("play")
 
     onLeave: =>
         @cancel = yes
