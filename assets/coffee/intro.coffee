@@ -49,6 +49,7 @@ class Intro extends serious.Widget
         console.log "onLeave"
         @player.addEvent 'ready', =>
             # stop the video
-            @player.api("stop")
+            @player.api("pause")
+            @player.api("unload")
 
 # EOF
