@@ -38,9 +38,15 @@ class Navigation extends serious.Widget
         @ui.find(".previous_screen_debugger").click(@previousScreen)
 
     goToScreen: (screen_id) =>
+        # support selector by class name
+        if typeof(screen_id) == "string"
+            screen_ui = @uis.screens.select(".#{screen_id}")
+            screen_id = @uis.screens.index(screen_ui)
+        else
+            screen_ui = @uis.screens.eq(screen_id)
         console.log "Navigation::go to screen", screen_id
         @uis.screens.opacity(0)
-        @uis.screens.eq(screen_id).opacity(1)
+        screen_ui.opacity(1)
         @currentScreen = screen_id
 
     nextScreen: =>
