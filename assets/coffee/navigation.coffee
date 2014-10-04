@@ -36,11 +36,13 @@ class Navigation extends serious.Widget
         # init screen
         @uis.screens.opacity(0).hide()
         @goToScreen(@currentScreen) # Loader
-        # preload and go to next screen
-        setTimeout(@nextScreen, 1000)
-        # debug
+        # TODO: to be removed (debug)
         @ui.find(".next_screen_debugger")    .click(@nextScreen)
         @ui.find(".previous_screen_debugger").click(@previousScreen)
+
+    itsReady: =>
+        # after preload
+        setTimeout(@nextScreen, 1000)
 
     goToScreen: (screen_id, params) =>
         # support selection by class name
@@ -51,7 +53,12 @@ class Navigation extends serious.Widget
             screen_ui = @uis.screens.eq(screen_id)
         console.log "Navigation::go to screen", screen_id, screen_ui.attr("class")
         # hide previous
-        @uis.screens.opacity(0).hide()
+        previous = @uis.screens.eq(@currentScreen)
+        previous.opacity(0).hide()
+        # and prevent it
+        if previous[0]._widget? and previous[0]._widget.onLeave?
+            previous[0]._widget.onLeave(params)
+        # show next
         screen_ui.show().animate({opacity:1}, 500)
         # try to call a onArrive method if the screen is a widget
         if screen_ui[0]._widget? and screen_ui[0]._widget.onArrive?

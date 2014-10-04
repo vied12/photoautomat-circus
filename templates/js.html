@@ -6,5 +6,24 @@
 	$(document).ready(function() {
 		serious.Widget.bindAll();
 		$(document).foundation();
+		var files = [
+			"static/images/about.jpg",
+			"static/images/drapes.gif",
+			"static/images/facebook.svg",
+			"static/images/googleplus.svg",
+			"static/images/home.jpg",
+			"static/images/logo.svg",
+			"static/images/paperplane.svg",
+			"static/images/play.svg",
+			"static/images/portrait1.jpg",
+			"static/images/red-light.jpg",
+			"static/images/share.svg",
+			"static/images/twitter.svg",
+			"static/images/volume-medium.svg",
+			"static/images/volume-mute.svg",
+		]
+		$.preload(files, function() {
+			Navigation.Instance.itsReady();
+		});
 	});
 </script>
