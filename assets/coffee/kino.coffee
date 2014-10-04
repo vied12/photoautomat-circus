@@ -26,6 +26,7 @@
 class Kino extends serious.Widget
 
     bindUI: () =>
-    	console.log "Kino"
+        console.log "Kino"
+
 
 # EOF

@@ -1,22 +1,19 @@
 @import "settings.scss";
 @import "../vendors/foundation/scss/foundation.scss";
 
+.hidden {display: none; visibility: hidden;}
 
 body {
-
+	color: white;
 }
 
-.hidden {
-	display: none;
-	visibility: hidden;
-}
-
-.positif {
-	background-color : white;
-	padding          : 20px;
-	img {
-		margin: 10px;
-	}
+.screen {
+	background-color : black;
+	position: absolute;
+	top    : 0;
+	left   : 0;
+	right  : 0;
+	bottom : 0;
 }
 
 .Photoautomat {
@@ -36,5 +33,13 @@ body {
 		left             : 0;
 		right            : 0;
 		bottom           : 0;
+	}
+}
+
+.positif {
+	background-color : white;
+	padding          : 20px;
+	img {
+		margin: 10px;
 	}
 }

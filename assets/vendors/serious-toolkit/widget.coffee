@@ -48,7 +48,7 @@ class window.serious.Widget
 				widget.ui             = $(ui)
 				widget.ko             = false
 				widget._bindUI(ui)
-				widget.bindUI(ui)
+				widget.bindUI(ui) if widget.bindUI?
 				# use http://knockoutjs.com as template manager
 				ko.applyBindings(widget.scope, ui.get(0)) if ko? and widget.ko
 				return widget

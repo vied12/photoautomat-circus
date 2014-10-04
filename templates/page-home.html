@@ -2,12 +2,18 @@
 {% block content %}
 
 <div class="Navigation widget" data-widget="Navigation">
+	
+	{% include "partials/menu.html" %}
 
+	<!-- screens -->
 	{% include "partials/loader.html" %}
+	{% include "partials/intro.html" %}
+	{% include "partials/home.html" %}
 	{% include "partials/kino.html" %}
+	
+
 	{% include "partials/photoautomat.html" %}
 </div>
 
-<!-- screens -->
 
 {% endblock %}

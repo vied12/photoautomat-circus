@@ -25,8 +25,39 @@
 
 class Navigation extends serious.Widget
 
+    constructor: ->
+        @UIS =
+            screens : ".screen"
+        @currentScreen = 0
+
+    bindUI : =>
+        @uis.screens.opacity(0)
+        @goToScreen(@currentScreen)
+
+    goToScreen: (screen_id) =>
+        console.log "Navigation::go to screen", screen_id
+        @uis.screens.opacity(0)
+        @uis.screens.eq(screen_id).opacity(1)
+        @currentScreen = screen_id
+
+    nextScreen: =>
+        if @currentScreen < (@uis.screens.length - 1)
+            @goToScreen(@currentScreen+1)
+
+    previousScreen: =>
+        if @currentScreen > 0
+            @goToScreen(@currentScreen-1)
+
+class Menu extends serious.Widget
     bindUI: () =>
-    	console.log "Navigation"
-       
+        @ko = yes
+        # define scope available in the template
+        @scope.mute      = @mute
+        @scope.see_movie = @seeMovie
+
+    seeMovie: (movie_id) =>
+        console.log "see movie", movie_id
+    mute: =>
+        console.log "mute ta yeule!"
 
 # EOF
