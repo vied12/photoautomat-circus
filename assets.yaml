@@ -21,6 +21,7 @@ js_all:
     - "../static/vendors/knockout-3.1.0.js"
     - "../static/vendors/fastclick.js"
     - "../static/vendors/say-cheese.js"
+    - "../static/vendors/froogaloop.min.js"
     # - "../assets/vendors/d3.js"
     # - "../assets/vendors/queue.js"
     # - "../assets/vendors/raf.js"

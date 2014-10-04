@@ -25,9 +25,39 @@
 
 class Kino extends serious.Widget
 
-    # bindUI: () =>
+    @CONFIG = 
+        videos : [
+            "http://vimeo.com/103544659"
+            "http://vimeo.com/61473487"
+        ]
+
+    constructor: ->
+        @UIS =
+            screener : ".Kino__screener"
+            iframe   : ".Kino__screener iframe"
+        @CONFIG = Kino.CONFIG
+
+    bindUI: () =>
 
     startVideo: (video_id) =>
-    	console.log "KINO::startVideo", video_id
+        console.log "KINO::startVideo", video_id
+        @currentVideo = video_id
+        @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1")
+        iframe = @ui.find("iframe")[0]
+        player = $f(iframe)
+        player.addEvent 'ready', =>
+            # player.addEvent('pause'       , @onPause)
+            # player.addEvent('finish'      , @onFinish)
+            # player.addEvent('playProgress', @onPlayProgress)
+            player.api("play")
+
+    onPlayProgress:(data, id) =>
+        console.log "KINO::onPlayProgress", data, id
+
+    onFinish: =>
+        console.log "KINO::onFinish"
+
+    onPause: =>
+        console.log "KINO::onPause"
 
 # EOF
