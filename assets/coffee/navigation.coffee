@@ -33,6 +33,8 @@ class Navigation extends serious.Widget
     bindUI : =>
         @uis.screens.opacity(0)
         @goToScreen(@currentScreen)
+        # debug
+        @ui.find(".next_screen_debugger").click(@nextScreen)
 
     goToScreen: (screen_id) =>
         console.log "Navigation::go to screen", screen_id
