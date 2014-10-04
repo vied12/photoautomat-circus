@@ -41,12 +41,15 @@ class Kino extends serious.Widget
         @navigation         = serious.Widget.ensureWidget(".Navigation")
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
 
+    onArrive: (video_id) =>
+        @startVideo(video_id or 0)
+
     startVideo: (video_id) =>
         console.log "KINO::startVideo", video_id
         # update currentVideo
         @currentVideo = video_id
         # set the video url into the iframe
-        @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1&title=0&amp;byline=0&amp;portrait=0")
+        @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=Kino_iframe")
         # get the video api
         player = $f(@uis.iframe.get(0))
         player.addEvent 'ready', =>

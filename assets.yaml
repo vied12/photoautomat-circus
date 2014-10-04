@@ -3,6 +3,7 @@ css_all:
   output: gen/style.css
   filters: cssmin
   contents:
+    - "../static/vendors/loader.css"
     - contents:
       - "../assets/scss/base.scss"
       filters: scss
@@ -36,6 +37,8 @@ js_all:
       - "../assets/vendors/serious-toolkit/utils.coffee"
       - "../assets/vendors/serious-toolkit/widget.coffee"
       - "../assets/coffee/navigation.coffee"
+      - "../assets/coffee/menu.coffee"
+      - "../assets/coffee/intro.coffee"
       - "../assets/coffee/home.coffee"
       - "../assets/coffee/kino.coffee"
       - "../assets/coffee/photoautomat.coffee"

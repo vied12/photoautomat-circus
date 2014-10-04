@@ -72,9 +72,7 @@
     background: url(../images/share.svg) no-repeat center;
 }
 
-
-
-#toggle {
+.Menu__toggle {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -121,27 +119,29 @@
     
     .patty:after {
         top: 12px;
-    } 
+    }
+
+    &.active {
+        right: 200px;
+
+        .patty {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        }
+        
+        .patty:after {
+            top: 21px !important;
+            transform: rotate(45deg);
+        }
+        
+        .patty:before {
+            top: 21px !important;
+            transform: rotate(-45deg);
+        } 
+    }
 }
 
 
-#toggle.active {
-    right: 200px;
 
-    .patty {
-        background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
-    }
-    
-    .patty:after {
-        top: 21px !important;
-        transform: rotate(45deg);
-    }
-    
-    .patty:before {
-        top: 21px !important;
-        transform: rotate(-45deg);
-    } 
-}
 
 
 

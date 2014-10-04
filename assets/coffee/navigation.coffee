@@ -27,15 +27,17 @@ class Navigation extends serious.Widget
 
     constructor: ->
         @UIS =
-            screens : ".screen"
+            screens            : ".screen"
         @currentScreen = 0
 
     bindUI : =>
         # get the widget instance
         @kinoWidget = serious.Widget.ensureWidget(".Kino")
         # init screen
-        @uis.screens.opacity(0)
-        @goToScreen(@currentScreen)
+        @uis.screens.opacity(0).hide()
+        @goToScreen(@currentScreen) # Loader
+        # preload and go to next screen
+        setTimeout(@nextScreen, 1000)
         # debug
         @ui.find(".next_screen_debugger")    .click(@nextScreen)
         @ui.find(".previous_screen_debugger").click(@previousScreen)
@@ -48,38 +50,21 @@ class Navigation extends serious.Widget
         else
             screen_ui = @uis.screens.eq(screen_id)
         console.log "Navigation::go to screen", screen_id, screen_ui.attr("class")
-        @uis.screens.opacity(0)
-        screen_ui.opacity(1)
-        # we ask the kino, then start a video
-        if screen_ui.hasClass("Kino")
-            # support parameters (for video)
-            @kinoWidget.startVideo(params or 0)
+        @uis.screens.opacity(0).hide()
+        screen_ui.show().opacity(1)
+        # try to call a onArrive method if the screen is a widget
+        if screen_ui[0]._widget? and screen_ui[0]._widget.onArrive?
+            screen_ui[0]._widget.onArrive(params)
         # update the currentScreen
         @currentScreen = screen_id
 
     nextScreen: =>
+        console.log "nextScreen"
         if @currentScreen < (@uis.screens.length - 1)
             @goToScreen(@currentScreen+1)
 
     previousScreen: =>
         if @currentScreen > 0
             @goToScreen(@currentScreen-1)
-
-class Menu extends serious.Widget
-    bindUI: () =>
-        @ko = yes
-        # get the widget instances
-        @navigation = serious.Widget.ensureWidget(".Navigation")
-        # define scope available in the template
-        @scope.mute      = @mute
-        @scope.see_movie = @seeMovie
-        @scope.about     = @about
-
-    seeMovie: (movie_id) =>
-        @navigation.goToScreen("Kino", movie_id)
-    mute: =>
-        console.log "mute ta yeule!"
-    about: =>
-        console.log "about asked"
 
 # EOF
