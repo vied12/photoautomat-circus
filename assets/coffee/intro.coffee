@@ -32,17 +32,15 @@ class Intro extends serious.Widget
 
     bindUI: =>
         @navigation = serious.Widget.ensureWidget(".Navigation")
-        @player = $f(@uis.intro_movie_iframe.get(0))
+        @player     = $f(@uis.intro_movie_iframe.get(0))
 
     onArrive: =>
         @cancel = no
          # start the introduction video and wait to the end to go to the next screen
-        @player.addEvent 'ready', =>
-            # bind some events
-            @player.addEvent 'finish' , =>
-                @navigation.nextScreen unless @cancel
-            # start the video
-            @player.api("play")
+        # start the video
+        @player.api("play")
+        @player.addEvent 'finish' , =>
+            @navigation.nextScreen unless @cancel
 
     onLeave: =>
         @cancel = yes
