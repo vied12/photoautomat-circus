@@ -36,8 +36,9 @@ js_all:
       - "../assets/vendors/serious-toolkit/utils.coffee"
       - "../assets/vendors/serious-toolkit/widget.coffee"
       - "../assets/coffee/navigation.coffee"
-      - "../assets/coffee/photoautomat.coffee"
+      - "../assets/coffee/home.coffee"
       - "../assets/coffee/kino.coffee"
+      - "../assets/coffee/photoautomat.coffee"
       output: gen/coffee.js
       filters: coffeescript
 
