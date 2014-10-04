@@ -35,6 +35,7 @@ class Navigation extends serious.Widget
         @goToScreen(@currentScreen)
         # debug
         @ui.find(".next_screen_debugger").click(@nextScreen)
+        @ui.find(".previous_screen_debugger").click(@previousScreen)
 
     goToScreen: (screen_id) =>
         console.log "Navigation::go to screen", screen_id
