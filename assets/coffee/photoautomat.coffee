@@ -38,8 +38,6 @@ class Photoautomat extends serious.Widget
 
     bindUI: =>
         that = this
-        # TODO: to be called later
-        @askPermission()
 
     askPermission: =>
         # initialize webcam manager
