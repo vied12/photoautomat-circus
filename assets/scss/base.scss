@@ -28,6 +28,14 @@ body {
 	z-index: 10;
 }
 
+.Menu {
+	position: fixed;
+	z-index: 10;
+	right:0px;
+	width: 100px;
+	background: white;
+}
+
 .Photoautomat {
 	video {
 		display: none;
