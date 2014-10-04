@@ -34,12 +34,12 @@ $transparent: rgba(255,255,255,9);
 }
 
 @mixin button {
-	padding: 20px;
-	background: $blue;
-	@include border-radius(10px);
-	color: white;
-	cursor: pointer;
-	
+    padding: 20px;
+    background: $blue;
+    @include border-radius(10px);
+    color: white;
+    cursor: pointer;
+    
 }
 
 .hidden {display: none; visibility: hidden;}
@@ -68,7 +68,7 @@ a {
 
 
 .button {
-	@include button();
+    @include button();
 }
 
 /* ELEMENTS */
@@ -93,13 +93,13 @@ a {
     z-index: 10;
     padding: 0 20px;
 =======
-	width: 96%;
-	height: 90px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	padding: 0 2%;
+    width: 96%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 2%;
 >>>>>>> Stashed changes
 }
 
@@ -192,17 +192,17 @@ a {
     @include transition();
     
 =======
-	position: fixed;
-	z-index: 10;
-	right:0px;
-	width: 250px;
-	height: 100%;
-	background: $transparent;
-	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-	box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-	@include transition();
-	
-	display: none;
+    position: fixed;
+    z-index: 10;
+    right:0px;
+    width: 250px;
+    height: 100%;
+    background: $transparent;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+    @include transition();
+    
+    display: none;
 >>>>>>> Stashed changes
 }
 
@@ -234,21 +234,21 @@ a {
 /* HOME */
 
 .Home {
-	background: url(../images/home.jpg) no-repeat;
-	-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-	
-	
-	.drapes {
-		position: absolute;
-		display: block;
-		height: 500px;
-		width: 500px;
-		width: 100%;
-		height: auto;
-	}
+    background: url(../images/home.jpg) no-repeat;
+    -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    
+    
+    .drapes {
+        position: absolute;
+        display: block;
+        height: 500px;
+        width: 500px;
+        width: 100%;
+        height: auto;
+    }
 }
 
 
