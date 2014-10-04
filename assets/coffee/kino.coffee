@@ -38,17 +38,23 @@ class Kino extends serious.Widget
         @CONFIG = Kino.CONFIG
 
     bindUI: () =>
+        @navigation         = serious.Widget.ensureWidget(".Navigation")
+        @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
 
     startVideo: (video_id) =>
         console.log "KINO::startVideo", video_id
+        # update currentVideo
         @currentVideo = video_id
+        # set the video url into the iframe
         @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1")
-        iframe = @ui.find("iframe")[0]
-        player = $f(iframe)
+        # get the video api
+        player = $f(@uis.iframe.get(0))
         player.addEvent 'ready', =>
+            # bind some events
+            player.addEvent('finish'      , @onFinish)
             # player.addEvent('pause'       , @onPause)
-            # player.addEvent('finish'      , @onFinish)
             # player.addEvent('playProgress', @onPlayProgress)
+            # start the video
             player.api("play")
 
     onPlayProgress:(data, id) =>
@@ -56,8 +62,19 @@ class Kino extends serious.Widget
 
     onFinish: =>
         console.log "KINO::onFinish"
+        # remove the video from the screen
+        @uis.iframe.attr("src", "")
+        # there is a next video
+        if @currentVideo < @CONFIG.videos.length - 1
+            # this will ask for next video at the end
+            @startPhotoTransition()
+        else
+            @navigation.nextScreen()
 
     onPause: =>
         console.log "KINO::onPause"
+
+    startPhotoTransition: =>
+        @photoautomatWidget.takeSnapshot(@navigation.savePhoto)
 
 # EOF

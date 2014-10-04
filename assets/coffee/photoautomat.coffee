@@ -29,43 +29,24 @@ class Photoautomat extends serious.Widget
         @UIS    =
             flash      : ".Photoautomat__flash"
             red_button : ".Photoautomat__red-button"
+        
         @CONFIG =
             default_size : [200, 160]
-
-        @is_ready = no
+        
+        @photoTaken = []
+        @is_ready   = no
 
     bindUI: =>
-        @ko = yes # enable KO
         that = this
-        # define scope
-        @scope.takeSnapshot = @takeSnapshot
+        # TODO: to be called later
+        @askPermission()
+
+    askPermission: =>
         # initialize webcam manager
         @sayCheese = new SayCheese(@ui.get(0), audio: false)
         @sayCheese.on("start", => @is_ready = yes)
         @sayCheese.on("snapshot", @onSnapshotTaken)
         @sayCheese.start()
-
-    onSnapshotTaken: (canvas) =>
-        # to b&w
-        context    = canvas.getContext("2d")
-        image_data = context.getImageData(0, 0, @CONFIG.default_size[0], @CONFIG.default_size[1])
-        pix        = image_data.data
-        i          = 0
-        n          = pix.length
-        while i < n
-            grayscale  = pix[i] * .3 + pix[i + 1] * .59 + pix[i + 2] * .11
-            pix[i]     = grayscale # red
-            pix[i + 1] = grayscale # green
-            pix[i + 2] = grayscale # blue
-            i += 4
-        # alpha
-        context.putImageData image_data, 0, 0
-        @callback(canvas)
-        @callback = null
-        image = new Image()
-        image.src = canvas.toDataURL("image/png")
-        # @ui.find(".positif").append(image)
-        @ui.append(image)
 
     takeSnapshot: (callback) =>
         # cancel the previous timeout
@@ -75,6 +56,7 @@ class Photoautomat extends serious.Widget
         @callback = callback
         # take the snapshot if ready, otherwise, try later
         if @is_ready
+            @ui.removeClass("hidden")
             # start the red light
             @uis.red_button
                 .opacity(0)
@@ -95,8 +77,30 @@ class Photoautomat extends serious.Widget
                         .animate({opacity: 0}  , 300)
                     @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
                 )
-
         else
             @restartLaterTimeout = setTimeout(@takeSnapshot, 300)
+
+    onSnapshotTaken: (canvas) =>
+        # to b&w
+        context    = canvas.getContext("2d")
+        image_data = context.getImageData(0, 0, @CONFIG.default_size[0], @CONFIG.default_size[1])
+        pix        = image_data.data
+        i          = 0
+        n          = pix.length
+        while i < n
+            grayscale  = pix[i] * .3 + pix[i + 1] * .59 + pix[i + 2] * .11
+            pix[i]     = grayscale # red
+            pix[i + 1] = grayscale # green
+            pix[i + 2] = grayscale # blue
+            i += 4
+        # alpha
+        context.putImageData image_data, 0, 0
+        photoTaken.push(canvas)
+        @callback(canvas)
+        @callback = null
+        # image = new Image()
+        # image.src = canvas.toDataURL("image/png")
+        # # @ui.find(".positif").append(image)
+        # @ui.append(image)
 
 # EOF

@@ -74,10 +74,13 @@ class Menu extends serious.Widget
         # define scope available in the template
         @scope.mute      = @mute
         @scope.see_movie = @seeMovie
+        @scope.about     = @about
 
     seeMovie: (movie_id) =>
         @navigation.goToScreen("Kino", movie_id)
     mute: =>
         console.log "mute ta yeule!"
+    about: =>
+        console.log "about asked"
 
 # EOF
