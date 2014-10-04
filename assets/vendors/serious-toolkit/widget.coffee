@@ -57,10 +57,12 @@ class window.serious.Widget
 				return null
 
 	@getWidgetClass = (ui) ->
+		widget = null
 		try
-			eval("(" + $(ui).attr("data-widget") + ")")
+			widget = eval("(" + $(ui).attr("data-widget") + ")")
 		catch e
 			console.error e.message
+		return widget
 
 	_bindUI: (ui) =>
 		if @ui[0]._widget
