@@ -34,7 +34,8 @@ class Photoautomat extends serious.Widget
             default_size : [200, 160]
         
         @photoTaken = []
-        @is_ready   = no
+        @isReady   = no
+        @retry     = 0
 
     bindUI: =>
         that = this
@@ -44,7 +45,7 @@ class Photoautomat extends serious.Widget
     askPermission: =>
         # initialize webcam manager
         @sayCheese = new SayCheese(@ui.get(0), audio: false)
-        @sayCheese.on("start", => @is_ready = yes)
+        @sayCheese.on("start", => @isReady = yes)
         @sayCheese.on("snapshot", @onSnapshotTaken)
         @sayCheese.start()
 
@@ -55,7 +56,7 @@ class Photoautomat extends serious.Widget
         callback  = (->) unless canvas?
         @callback = callback
         # take the snapshot if ready, otherwise, try later
-        if @is_ready
+        if @isReady
             @ui.removeClass("hidden")
             # start the red light
             @uis.red_button
@@ -74,11 +75,12 @@ class Photoautomat extends serious.Widget
                         .opacity(1)
                         .animate({opacity: 0.5}, 300)
                         .animate({opacity: 1}  , 300)
-                        .animate({opacity: 0}  , 300)
+                        .animate({opacity: 0}  , 300, "swing")
                     @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
                 )
         else
-            @restartLaterTimeout = setTimeout(@takeSnapshot, 300)
+            @retry += 1
+            @restartLaterTimeout = setTimeout(@takeSnapshot, 300) unless @retry > 5
 
     onSnapshotTaken: (canvas) =>
         # to b&w
@@ -95,7 +97,7 @@ class Photoautomat extends serious.Widget
             i += 4
         # alpha
         context.putImageData image_data, 0, 0
-        photoTaken.push(canvas)
+        @photoTaken.push(canvas)
         @callback(canvas)
         @callback = null
         # image = new Image()

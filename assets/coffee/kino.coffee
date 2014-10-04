@@ -75,6 +75,6 @@ class Kino extends serious.Widget
         console.log "KINO::onPause"
 
     startPhotoTransition: =>
-        @photoautomatWidget.takeSnapshot(@navigation.savePhoto)
+        @photoautomatWidget.takeSnapshot()
 
 # EOF

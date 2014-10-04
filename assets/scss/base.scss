@@ -11,11 +11,11 @@
 }
 
 @mixin transition{
-	-webkit-transition: all 200ms ease-in-out;
-		-moz-transition: all 200ms ease-in-out;
-			-ms-transition: all 200ms ease-in-out;
-			-o-transition: all 200ms ease-in-out;
-			transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+            -ms-transition: all 200ms ease-in-out;
+            -o-transition: all 200ms ease-in-out;
+            transition: all 200ms ease-in-out;
 }
 
 
@@ -39,10 +39,10 @@ $transparent: rgba(255,255,255,9);
 .hidden {display: none; visibility: hidden;}
 
 body, html {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -55,8 +55,8 @@ body {
 /* TYPOGRAPHY */
 
 a {
-	color: $primary-color;
-	text-decoration: none;
+    color: $primary-color;
+    text-decoration: none;
 }
 
 
@@ -65,28 +65,28 @@ a {
 /* ELEMENTS */
 
 .screen {
-	background-color : $primary-color;
-	position: absolute;
-	top    : 0;
-	left   : 0;
-	right  : 0;
-	bottom : 0;
-	padding: 20px;
+    background-color : $primary-color;
+    position: absolute;
+    top    : 0;
+    left   : 0;
+    right  : 0;
+    bottom : 0;
+    padding: 20px;
 }
 
 .Header {
-	width: 100%;
-	height: 90px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	padding: 0 20px;
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 20px;
 }
 
 #logo {
-	position: relative;
-	top: 20px;
+    position: relative;
+    top: 20px;
 }
 
 #toggle {
@@ -118,8 +118,8 @@ a {
     }
     
     .patty:after, .patty:before {
-    		width: 27px;
-    		height: 3px;
+            width: 27px;
+            height: 3px;
         background: white;
         content: "";
         display: block;
@@ -141,61 +141,61 @@ a {
 
 
 #toggle.active {
-	.patty {
-	    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
-	}
-	
-	.patty:after {
-	    top: 21px !important;
-	    transform: rotate(45deg);
-	}
-	
-	.patty:before {
-	    top: 21px !important;
-	    transform: rotate(-45deg);
-	}
-	
-	
+    .patty {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    }
+    
+    .patty:after {
+        top: 21px !important;
+        transform: rotate(45deg);
+    }
+    
+    .patty:before {
+        top: 21px !important;
+        transform: rotate(-45deg);
+    }
+    
+    
 }
 
 
 
 .Menu {
-	position: fixed;
-	z-index: 10;
-	right:0px;
-	width: 250px;
-	height: 100%;
-	background: $transparent;
-	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-	box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-	@include transition();
-	
+    position: fixed;
+    z-index: 10;
+    right:0px;
+    width: 250px;
+    height: 100%;
+    background: $transparent;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+    @include transition();
+    
 }
 
 .Menu {
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+    ul {
+        margin: 0;
+        padding: 0;
+    }
 
-	li {
-		list-style: none;
-		border-bottom: 1px solid $grey;
-		padding: 20px 10px;
-	}
-	
-	a {
-		//line-height: 40px;
-	}
+    li {
+        list-style: none;
+        border-bottom: 1px solid $grey;
+        padding: 20px 10px;
+    }
+    
+    a {
+        //line-height: 40px;
+    }
 }
 
 .icon {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	background: $dark;
-	margin-right: 20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: $dark;
+    margin-right: 20px;
 }
 
 
@@ -203,49 +203,42 @@ a {
 /* PHOTOAUTOMAT */
 
 .Kino {
-	.Kino__screener {
-		position: absolute;
-		top    : 0;
-		left   : 0;
-		right  : 0;
-		bottom : 0;
-		z-index: 9;
-	}
+    .Kino__screener {
+        position: absolute;
+        top    : 0;
+        left   : 0;
+        right  : 0;
+        bottom : 0;
+        z-index: 9;
+    }
 }
 
 
 .Photoautomat {
-	position: absolute;
-	top     : 0;
-	left    : 0;
-	right   : 0;
-	bottom  : 0;
-	z-index : 11;
-	video {
-		display: none;
-	}
-	.Photoautomat__red-button {
-		position         : fixed;
-		top              : 50%;
-		left             : 50%;
-		transform: translate(-50%, -50%);
-	}
-	.Photoautomat__flash {
-		background-color : white;
-		position         : fixed;
-		top              : 0;
-		left             : 0;
-		right            : 0;
-		bottom           : 0;
-	}
+    pointer-events: none;
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+    z-index : 11;
+    video {
+        display: none;
+    }
+    .Photoautomat__red-button {
+        position         : fixed;
+        top              : 50%;
+        left             : 50%;
+        transform: translate(-50%, -50%);
+    }
+    .Photoautomat__flash {
+        background-color : white;
+        position         : fixed;
+        top              : 0;
+        left             : 0;
+        right            : 0;
+        bottom           : 0;
+    }
 }
 
-.positif {
-	background-color : white;
-	padding          : 20px;
-	img {
-		margin: 10px;
-	}
-}
-
-
+// EOF
