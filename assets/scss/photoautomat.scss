@@ -1,0 +1,26 @@
+.Photoautomat {
+    pointer-events: none;
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+    z-index : 11;
+    video {
+        display: none;
+    }
+    .Photoautomat__red-button {
+        position         : fixed;
+        top              : 50%;
+        left             : 50%;
+        transform: translate(-50%, -50%);
+    }
+    .Photoautomat__flash {
+        background-color : white;
+        position         : fixed;
+        top              : 0;
+        left             : 0;
+        right            : 0;
+        bottom           : 0;
+    }
+}

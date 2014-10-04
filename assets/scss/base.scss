@@ -83,16 +83,6 @@ a {
     padding: 20px;
 }
 
-.Header {
-    width: 96%;
-    height: 90px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 0 2%;
-}
-
 #logo {
     position: relative;
     top: 20px;
@@ -167,40 +157,6 @@ a {
     
 }
 
-
-
-.Menu {
-    position: fixed;
-    z-index: 10;
-    right:0px;
-    width: 250px;
-    height: 100%;
-    background: $transparent;
-    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-    @include transition();
-    
-    display: none;
-
-}
-
-.Menu {
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        list-style: none;
-        border-bottom: 1px solid $grey;
-        padding: 20px 10px;
-    }
-    
-    a {
-        //line-height: 40px;
-    }
-}
-
 .icon {
     display: inline-block;
     width: 40px;
@@ -209,67 +165,10 @@ a {
     margin-right: 20px;
 }
 
-/* HOME */
-
-.Home {
-    background: url(../images/home.jpg) no-repeat;
-    -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    
-    
-    .drapes {
-        position: absolute;
-        display: block;
-        height: 500px;
-        width: 500px;
-        width: 100%;
-        height: auto;
-    }
-}
-
-
-
-/* PHOTOAUTOMAT */
-
-.Kino {
-    .Kino__screener {
-        position: absolute;
-        top    : 0;
-        left   : 0;
-        right  : 0;
-        bottom : 0;
-        z-index: 9;
-    }
-}
-
-
-.Photoautomat {
-    pointer-events: none;
-    position: absolute;
-    top     : 0;
-    left    : 0;
-    right   : 0;
-    bottom  : 0;
-    z-index : 11;
-    video {
-        display: none;
-    }
-    .Photoautomat__red-button {
-        position         : fixed;
-        top              : 50%;
-        left             : 50%;
-        transform: translate(-50%, -50%);
-    }
-    .Photoautomat__flash {
-        background-color : white;
-        position         : fixed;
-        top              : 0;
-        left             : 0;
-        right            : 0;
-        bottom           : 0;
-    }
-}
+@import "header.scss";
+@import "home.scss";
+@import "kino.scss";
+@import "menu.scss";
+@import "photoautomat.scss";
 
 // EOF
