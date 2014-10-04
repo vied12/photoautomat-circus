@@ -6,8 +6,35 @@ body {
 
 }
 
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.positif {
+	background-color : white;
+	padding          : 20px;
+	img {
+		margin: 10px;
+	}
+}
+
 .Photoautomat {
 	video {
 		display: none;
+	}
+	.Photoautomat__red-button {
+		position         : fixed;
+		top              : 50%;
+		left             : 50%;
+		transform: translate(-50%, -50%);
+	}
+	.Photoautomat__flash {
+		background-color : white;
+		position         : fixed;
+		top              : 0;
+		left             : 0;
+		right            : 0;
+		bottom           : 0;
 	}
 }

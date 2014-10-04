@@ -26,16 +26,21 @@
 class Photoautomat extends serious.Widget
 
     constructor: ->
+        @UIS    =
+            flash      : ".Photoautomat__flash"
+            red_button : ".Photoautomat__red-button"
         @CONFIG =
-            default_size : [640, 480]
+            default_size : [200, 160]
 
         @is_ready = no
 
     bindUI: =>
         that = this
+        # define scope
+        @scope.takeSnapshot = @takeSnapshot
+        # initialize webcam manager
         @sayCheese = new SayCheese(@ui.get(0), audio: false)
-        @sayCheese.on "start", ->
-            that.is_ready = yes
+        @sayCheese.on("start", => @is_ready = yes)
         @sayCheese.on("snapshot", @onSnapshotTaken)
         @sayCheese.start()
 
@@ -58,14 +63,39 @@ class Photoautomat extends serious.Widget
         @callback = null
         image = new Image()
         image.src = canvas.toDataURL("image/png")
+        # @ui.find(".positif").append(image)
         @ui.append(image)
 
     takeSnapshot: (callback) =>
-        callback = (->) unless canvas?
+        # cancel the previous timeout
+        clearTimeout(@restartLaterTimeout)
+        # register the callback
+        callback  = (->) unless canvas?
         @callback = callback
+        # take the snapshot if ready, otherwise, try later
         if @is_ready
-            @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
+            # start the red light
+            @uis.red_button
+                .opacity(0)
+                .show()
+                .removeClass("hidden")
+                .animate({opacity: 1}  , 1000)
+                .animate({opacity: 0}  , 1000)
+                .animate({opacity: 1}  , 1000)
+                .animate({opacity: 0}  , 1000)
+                .animate({opacity: 1}  , 1000)
+                .animate({opacity: 0}  , 1000, "swing", =>
+                    # start the flash
+                    @uis.flash.removeClass("hidden")
+                        .show()
+                        .opacity(1)
+                        .animate({opacity: 0.5}, 300)
+                        .animate({opacity: 1}  , 300)
+                        .animate({opacity: 0}  , 300)
+                    @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
+                )
+
         else
-            setTimeout(@takeSnapshot, 200)
+            @restartLaterTimeout = setTimeout(@takeSnapshot, 300)
 
 # EOF
