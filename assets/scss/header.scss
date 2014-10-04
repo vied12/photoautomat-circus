@@ -1,13 +1,23 @@
 .Header {
     width: 96%;
+    opacity: 1;
     height: 90px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
     padding: 0 2%;
+    -moz-transition-duration:.5s;
+    -moz-transition-property:opacity;
+    -moz-transition-delay:1.5s;
     #logo {
         position: relative;
         top: 20px;
+    }
+}
+
+.without-navigation {
+    .Header {
+        opacity: 0;
     }
 }

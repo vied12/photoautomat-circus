@@ -30,6 +30,7 @@ class Home extends serious.Widget
 			drapes : ".drapes"
 
 	onArrive: =>
+		$("body").removeClass("without-navigation")
 		# replay the gif animation
 		@uis.drapes.css("background-image", "url(static/images/drapes.gif?v=#{new Date().getTime()})")
 

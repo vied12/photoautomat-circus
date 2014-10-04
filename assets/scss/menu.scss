@@ -72,23 +72,29 @@
     background: url(../images/share.svg) no-repeat center;
 }
 
+.without-navigation {
+    .Menu__toggle {
+        opacity: 0;
+    }
+}
 .Menu__toggle {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     cursor: pointer;
     width: 30px;
+    opacity: 1;
     height: 10px;
     padding: 20px;
     position: fixed;
     right: 10px;
     top: 15px;
     z-index: 1000;
-    -webkit-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
-        -moz-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
-          -ms-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
-            -o-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
-              transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
-    
+    -webkit-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
+    -moz-transition:    all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
+    -ms-transition:     all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
+    -o-transition:      all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
+    transition:         all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
+
     .patty {
         background: white;
         width: 27px;
