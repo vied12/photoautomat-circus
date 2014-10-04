@@ -5,11 +5,15 @@
         -o-background-size: cover;
         background-size: cover;
   .drapes {
-        position: absolute;
-        display: block;
-        height: 500px;
-        width: 500px;
+        position: relative;
+        background: url(../images/drapes.gif) no-repeat;
         width: 100%;
-        height: auto;
+        height: 100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        top: -9px;
+        left: 4px;
     }
 }
