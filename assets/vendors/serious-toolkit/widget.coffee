@@ -47,8 +47,8 @@ class window.serious.Widget
 				widget.scope          = {}
 				widget.ui             = $(ui)
 				widget.ko             = false
-				widget.bindUI(ui)
 				widget._bindUI(ui)
+				widget.bindUI(ui)
 				# use http://knockoutjs.com as template manager
 				ko.applyBindings(widget.scope, ui.get(0)) if ko? and widget.ko
 				return widget
@@ -57,7 +57,10 @@ class window.serious.Widget
 				return null
 
 	@getWidgetClass = (ui) ->
-		return eval("(" + $(ui).attr("data-widget") + ")")
+		try
+			eval("(" + $(ui).attr("data-widget") + ")")
+		catch e
+			console.error e.message
 
 	_bindUI: (ui) =>
 		if @ui[0]._widget
