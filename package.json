@@ -1,6 +1,9 @@
 {
   "name": "Serious-Toolkit",
   "version": "0.0.0",
+  "engines": {
+    "node": "0.10.x"
+  },
   "description": "A Serious-Toolkit to start serious apps",
   "main": "webapp.py",
   "dependencies": {
