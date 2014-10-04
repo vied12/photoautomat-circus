@@ -19,18 +19,35 @@
     
     a {
         display: block;
-        height: 133px;
         font-size: .85em;
+        line-height: 0;
     }
+    
     img {
+        position: relative;
+        top: 0;
+        left: 0;
         @include grayscale();
-        
     }
-}
-
-
-.story1 {
-    background: url(../images/portrait1.jpg) no-repeat center;
+    
+    a:hover img {
+       -webkit-filter: none;
+         -moz-filter: none;
+         -ms-filter: none;
+         -o-filter: none;
+         filter: none;
+    }
+    
+    .small {
+        height: 40px;
+    }
+    
+    .small a {
+        float: left;
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+    }
 }
 
 
@@ -109,6 +126,8 @@
 
 
 #toggle.active {
+    right: 200px;
+
     .patty {
         background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
     }
