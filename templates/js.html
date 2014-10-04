@@ -3,6 +3,8 @@
 {% endassets %}
 {% block extra_js %}{% endblock %}
 <script>
-	serious.Widget.bindAll();
-	$(document).foundation();
+	$(document).ready(function() {
+		serious.Widget.bindAll();
+		$(document).foundation();
+	});
 </script>

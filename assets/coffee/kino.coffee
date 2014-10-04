@@ -23,10 +23,9 @@
 #     You should have received a copy of the GNU General Public License
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
-class Navigation extends serious.Widget
+class Kino extends serious.Widget
 
     bindUI: () =>
-    	console.log "Navigation"
-       
+    	console.log "Kino"
 
 # EOF

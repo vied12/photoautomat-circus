@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="Navigation widget" data-widget="Navigation">
+
+	<div class="widget Photoautomat" data-widget="Photoautomat">
+		<div class="positif"></div>
+		<div class="Photoautomat__flash hidden"></div>
+		<div class="Photoautomat__red-button hidden">
+			<img src="{{ url_for("static", filename="images/red-light.jpg") }}" />
+		</div>
+		<a class="button" data-bind="click: takeSnapshot">photo</a>
+	</div>
+
+</div>
+{% endblock %}

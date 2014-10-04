@@ -48,13 +48,13 @@ babel = Babel(app)
 @app.route('/')
 def index():
     g.language = "en"
-    response = make_response(render_template('partials/home.html'))
+    response = make_response(render_template('page-home.html'))
     return response
 
 @app.route('/webcam')
 def webcam():
     g.language = "en"
-    response = make_response(render_template('partials/webcam.html'))
+    response = make_response(render_template('page-webcam.html'))
     return response
 # -----------------------------------------------------------------------------
 #
