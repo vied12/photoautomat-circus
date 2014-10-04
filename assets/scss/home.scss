@@ -1,9 +1,6 @@
 .Home {
         background: url(../images/home.jpg) no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        @include bg-cover();
   .drapes {
         position: relative;
         background: url(../images/drapes.gif) no-repeat;

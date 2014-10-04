@@ -33,6 +33,13 @@ $transparent: rgba(255,255,255,9);
             transition: all 200ms ease-in-out;
 }
 
+@mixin bg-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 @mixin button {
     padding: 20px;
     background: $blue;
@@ -40,6 +47,16 @@ $transparent: rgba(255,255,255,9);
     color: white;
     cursor: pointer;
     
+}
+
+@mixin grayscale {
+    -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      filter: url("grayscale.svg#greyscale"); /* Firefox 4+ */
+      filter: gray; /* IE 6-9 */
 }
 
 .hidden {display: none; visibility: hidden;}
@@ -53,7 +70,8 @@ body, html {
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
+  color: #fff;
+  background-color: $dark;
 }
 
 
@@ -65,6 +83,22 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-size: .85em;
+    line-height: 1.65em;
+    margin-bottom: 2em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* BUTTONS */
 
 .button {
     @include button();
@@ -79,13 +113,13 @@ a {
     left   : 0;
     right  : 0;
     bottom : 0;
-    padding: 20px;
 }
 
 @import "header.scss";
 @import "home.scss";
 @import "kino.scss";
 @import "menu.scss";
+@import "about.scss";
 @import "photoautomat.scss";
 
 // EOF

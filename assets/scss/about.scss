@@ -1,0 +1,27 @@
+.About {
+    .left {
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $red;
+        background: url(../images/about.jpg);
+        @include bg-cover();
+    }
+    
+    .right {
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        padding: 5%;
+        color: white;
+    }
+    
+    li {
+        font-size: .85em;
+        line-height: 1.65em;
+    }
+}

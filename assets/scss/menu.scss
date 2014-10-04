@@ -2,36 +2,59 @@
     position: fixed;
     z-index: 10;
     right:0px;
-    width: 250px;
+    width: 200px;
     height: 100%;
     background: $transparent;
     -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
     box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
     @include transition();
-    display: none;
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
+ 
+     ul {
+     border: 10px solid $dark;
+     }
+ 
     li {
-        list-style: none;
-        border-bottom: 1px solid $grey;
-        padding: 20px 10px;
+        border-bottom: 10px solid $dark;
     }
     
     a {
-        //line-height: 40px;
+        display: block;
+        height: 133px;
+        font-size: .85em;
+    }
+    img {
+        @include grayscale();
+        
     }
 }
+
+
+.story1 {
+    background: url(../images/portrait1.jpg) no-repeat center;
+}
+
 
 .icon {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background: $dark;
-    margin-right: 20px;
+    background: $grey;
+    margin-right: 15px;
+    vertical-align: middle;
 }
+
+.video-ico {
+    background: url(../images/play.svg) no-repeat center;
+}
+
+.mute-ico {
+    background: url(../images/volume-mute.svg) no-repeat center;
+}
+
+.share-ico {
+    background: url(../images/share.svg) no-repeat center;
+}
+
 
 
 #toggle {
@@ -41,7 +64,7 @@
     width: 30px;
     height: 10px;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 15px;
     z-index: 1000;
@@ -98,7 +121,8 @@
     .patty:before {
         top: 21px !important;
         transform: rotate(-45deg);
-    }
-    
-    
+    } 
 }
+
+
+

@@ -4,10 +4,22 @@
 
 <div class="Menu widget" data-widget="Menu">
 	<ul>
-		<li><a data-bind="click: see_movie.bind($data, 0)" href="#"><span class="icon video-ico"></span>Story 1</a></li>
-		<li><a data-bind="click: see_movie.bind($data, 1)" href="#"><span class="icon video-ico"></span>Story 2</a></li>
-		<li><a data-bind="click: see_movie.bind($data, 2)" href="#"><span class="icon video-ico"></span>Story 3</a></li>
-		<li><a data-bind="click: see_movie.bind($data, 3)" href="#"><span class="icon video-ico"></span>Story 4</a></li>
+		<li><a data-bind="click: see_movie.bind($data, 0)" href="#">
+		<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+		<span class="icon video-ico"></span>Story 1</a></li>
+		
+		<li><a data-bind="click: see_movie.bind($data, 1)" href="#">
+		<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+		<span class="icon video-ico"></span>Story 2</a></li>
+		
+		<li><a data-bind="click: see_movie.bind($data, 2)" href="#">
+		<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+		<span class="icon video-ico"></span>Story 3</a></li>
+		
+		<li><a data-bind="click: see_movie.bind($data, 3)" href="#">
+		<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+		<span class="icon video-ico"></span>Story 4</a></li>
+		
 		<li><a data-bind="click: mute"                     href="#"><span class="icon mute-ico"></span>Mute</a></li>
 		<li><a data-bind="click: about"                    href="#"><span class="icon about-ico"></span>About</a></li>
 	</ul>
