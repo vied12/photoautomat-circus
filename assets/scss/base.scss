@@ -212,7 +212,7 @@ a {
 /* HOME */
 
 .Home {
-    background: url(../images/home.jpg) no-repeat;
+    background: url(../images/home.jpg)  no-repeat center center fixed;
     -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -220,10 +220,15 @@ a {
     
     
     .drapes {
-        position: absolute;
+        position: fixed;
         display: block;
-        height: 500px;
-        width: 500px;
+        height: auto;
+        width: 280px;
+        left: 44.4%;
+        top: 18%;
+    }
+    
+    .drapes img {
         width: 100%;
         height: auto;
     }
