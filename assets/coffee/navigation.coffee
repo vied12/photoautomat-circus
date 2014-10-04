@@ -50,11 +50,10 @@ class Navigation extends serious.Widget
         console.log "Navigation::go to screen", screen_id
         @uis.screens.opacity(0)
         screen_ui.opacity(1)
-        # support parameters (for video)
-        if params?
-            # we ask the kino
-            if screen_ui.hasClass("Kino")
-                @kinoWidget.startVideo(params)
+        # we ask the kino, then start a video
+        if screen_ui.hasClass("Kino")
+            # support parameters (for video)
+            @kinoWidget.startVideo(params or 0)
         # update the currentScreen
         @currentScreen = screen_id
 
