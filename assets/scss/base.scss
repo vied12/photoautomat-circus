@@ -1,9 +1,29 @@
 @import "settings.scss";
 @import "../vendors/foundation/scss/foundation.scss";
 
+/* MIXINS */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+
+/* COLOURS */
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: gold;
+$primary-color: #232327;
+$dark-red: #a42238;
+$red: #c32f31;
+$yellow: #ffe000;
+$blue: #4066b6;
+$light-grey: #d8dee5;
+$beige: #ad9999;
+$dark: #232327;
+
 
 .hidden {display: none; visibility: hidden;}
 
@@ -14,7 +34,7 @@ body {
 }
 
 .screen {
-	background-color : black;
+	background-color : $primary-color;
 	position: absolute;
 	top    : 0;
 	left   : 0;
@@ -24,9 +44,14 @@ body {
 }
 
 .Header {
-	background-color: yellow;
-	position: relative;
+	width: 100%;
+	height: 50px;
+	//background-color: $yellow;
+	position: absolute;
+	top: 0;
+	left: 0;
 	z-index: 10;
+	padding: 20px;
 }
 
 .Menu {
