@@ -24,3 +24,13 @@
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
 class Home extends serious.Widget
+
+	constructor: ->
+		@UIS =
+			drapes : ".drapes"
+
+	onArrive: =>
+		# replay the gif animation
+		@uis.drapes.css("background-image", "url(static/images/drapes.gif?v=#{new Date().getTime()})")
+
+# EOF
