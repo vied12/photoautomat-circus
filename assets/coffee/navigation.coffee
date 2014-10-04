@@ -27,7 +27,7 @@ class Navigation extends serious.Widget
 
     constructor: ->
         @UIS =
-            screens            : ".screen"
+            screens : ".screen"
         @currentScreen = 0
 
     bindUI : =>
@@ -43,15 +43,16 @@ class Navigation extends serious.Widget
         @ui.find(".previous_screen_debugger").click(@previousScreen)
 
     goToScreen: (screen_id, params) =>
-        # support selector by class name
+        # support selection by class name
         if typeof(screen_id) == "string"
             screen_ui = @uis.screens.filter(".#{screen_id}")
             screen_id = @uis.screens.index(screen_ui)
         else
             screen_ui = @uis.screens.eq(screen_id)
         console.log "Navigation::go to screen", screen_id, screen_ui.attr("class")
+        # hide previous
         @uis.screens.opacity(0).hide()
-        screen_ui.show().opacity(1)
+        screen_ui.show().animate({opacity:1}, 500)
         # try to call a onArrive method if the screen is a widget
         if screen_ui[0]._widget? and screen_ui[0]._widget.onArrive?
             screen_ui[0]._widget.onArrive(params)
