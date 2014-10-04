@@ -84,15 +84,6 @@ a {
 }
 
 .Header {
-<<<<<<< Updated upstream
-    width: 100%;
-    height: 90px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 0 20px;
-=======
     width: 96%;
     height: 90px;
     position: absolute;
@@ -100,7 +91,6 @@ a {
     left: 0;
     z-index: 10;
     padding: 0 2%;
->>>>>>> Stashed changes
 }
 
 #logo {
@@ -180,18 +170,6 @@ a {
 
 
 .Menu {
-<<<<<<< Updated upstream
-    position: fixed;
-    z-index: 10;
-    right:0px;
-    width: 250px;
-    height: 100%;
-    background: $transparent;
-    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-    @include transition();
-    
-=======
     position: fixed;
     z-index: 10;
     right:0px;
@@ -203,7 +181,7 @@ a {
     @include transition();
     
     display: none;
->>>>>>> Stashed changes
+
 }
 
 .Menu {
