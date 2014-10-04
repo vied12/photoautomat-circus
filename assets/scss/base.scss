@@ -1,6 +1,21 @@
 @import "settings.scss";
 @import "../vendors/foundation/scss/foundation.scss";
 
+
+/* COLOURS */
+
+$font-stack: 'PT Mono', helvetica, arial, sans-serif;;
+$primary-color: #232327;
+$dark-red: #a42238;
+$red: #c32f31;
+$yellow: #ffe000;
+$blue: #4066b6;
+$grey: #d8dee5;
+$beige: #ad9999;
+$dark: #232327;
+
+$transparent: rgba(255,255,255,9);
+
 /* MIXINS */
 
 @mixin border-radius($radius) {
@@ -18,23 +33,14 @@
             transition: all 200ms ease-in-out;
 }
 
-
-.box { @include border-radius(10px); }
-
-/* COLOURS */
-
-$font-stack: 'PT Mono', helvetica, arial, sans-serif;;
-$primary-color: #232327;
-$dark-red: #a42238;
-$red: #c32f31;
-$yellow: #ffe000;
-$blue: #4066b6;
-$grey: #d8dee5;
-$beige: #ad9999;
-$dark: #232327;
-
-$transparent: rgba(255,255,255,9);
-
+@mixin button {
+	padding: 20px;
+	background: $blue;
+	@include border-radius(10px);
+	color: white;
+	cursor: pointer;
+	
+}
 
 .hidden {display: none; visibility: hidden;}
 
@@ -52,6 +58,7 @@ body {
 }
 
 
+
 /* TYPOGRAPHY */
 
 a {
@@ -60,7 +67,9 @@ a {
 }
 
 
-
+.button {
+	@include button();
+}
 
 /* ELEMENTS */
 
@@ -75,6 +84,7 @@ a {
 }
 
 .Header {
+<<<<<<< Updated upstream
     width: 100%;
     height: 90px;
     position: absolute;
@@ -82,6 +92,15 @@ a {
     left: 0;
     z-index: 10;
     padding: 0 20px;
+=======
+	width: 96%;
+	height: 90px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	padding: 0 2%;
+>>>>>>> Stashed changes
 }
 
 #logo {
@@ -161,6 +180,7 @@ a {
 
 
 .Menu {
+<<<<<<< Updated upstream
     position: fixed;
     z-index: 10;
     right:0px;
@@ -171,6 +191,19 @@ a {
     box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
     @include transition();
     
+=======
+	position: fixed;
+	z-index: 10;
+	right:0px;
+	width: 250px;
+	height: 100%;
+	background: $transparent;
+	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+	box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+	@include transition();
+	
+	display: none;
+>>>>>>> Stashed changes
 }
 
 .Menu {
@@ -196,6 +229,26 @@ a {
     height: 40px;
     background: $dark;
     margin-right: 20px;
+}
+
+/* HOME */
+
+.Home {
+	background: url(../images/home.jpg) no-repeat;
+	-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	
+	
+	.drapes {
+		position: absolute;
+		display: block;
+		height: 500px;
+		width: 500px;
+		width: 100%;
+		height: auto;
+	}
 }
 
 
