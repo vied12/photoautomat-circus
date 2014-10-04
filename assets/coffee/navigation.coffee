@@ -34,7 +34,7 @@ class Navigation extends serious.Widget
         @uis.screens.opacity(0)
         @goToScreen(@currentScreen)
         # debug
-        @ui.find(".next_screen_debugger").click(@nextScreen)
+        @ui.find(".next_screen_debugger")    .click(@nextScreen)
         @ui.find(".previous_screen_debugger").click(@previousScreen)
 
     goToScreen: (screen_id) =>
