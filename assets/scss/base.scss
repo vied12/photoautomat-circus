@@ -1,12 +1,17 @@
 @import "settings.scss";
 @import "../vendors/foundation/scss/foundation.scss";
 
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: gold;
+
 .hidden {display: none; visibility: hidden;}
 
-body {
-	color: white;
-}
 
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
 .screen {
 	background-color : black;
 	position: absolute;
@@ -15,6 +20,8 @@ body {
 	right  : 0;
 	bottom : 0;
 }
+
+ 
 
 .Photoautomat {
 	video {
