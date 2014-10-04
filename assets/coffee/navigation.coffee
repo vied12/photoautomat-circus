@@ -47,7 +47,7 @@ class Navigation extends serious.Widget
             screen_id = @uis.screens.index(screen_ui)
         else
             screen_ui = @uis.screens.eq(screen_id)
-        console.log "Navigation::go to screen", screen_id
+        console.log "Navigation::go to screen", screen_id, screen_ui.attr("class")
         @uis.screens.opacity(0)
         screen_ui.opacity(1)
         # we ask the kino, then start a video

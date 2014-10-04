@@ -35,7 +35,6 @@ class Photoautomat extends serious.Widget
         
         @photoTaken = []
         @isReady   = no
-        @retry     = 0
 
     bindUI: =>
         that = this
@@ -50,37 +49,32 @@ class Photoautomat extends serious.Widget
         @sayCheese.start()
 
     takeSnapshot: (callback) =>
-        # cancel the previous timeout
-        clearTimeout(@restartLaterTimeout)
         # register the callback
-        callback  = (->) unless canvas?
-        @callback = callback
-        # take the snapshot if ready, otherwise, try later
-        if @isReady
-            @ui.removeClass("hidden")
-            # start the red light
-            @uis.red_button
-                .opacity(0)
-                .show()
-                .removeClass("hidden")
-                .animate({opacity: 1}  , 1000)
-                .animate({opacity: 0}  , 1000)
-                .animate({opacity: 1}  , 1000)
-                .animate({opacity: 0}  , 1000)
-                .animate({opacity: 1}  , 1000)
-                .animate({opacity: 0}  , 1000, "swing", =>
-                    # start the flash
-                    @uis.flash.removeClass("hidden")
-                        .show()
-                        .opacity(1)
-                        .animate({opacity: 0.5}, 300)
-                        .animate({opacity: 1}  , 300)
-                        .animate({opacity: 0}  , 300, "swing")
+        @callback = callback or (->)
+        @ui.removeClass("hidden")
+        # start the red light
+        @uis.red_button
+            .opacity(0)
+            .show()
+            .removeClass("hidden")
+            .animate({opacity: 1}  , 1000)
+            .animate({opacity: 0}  , 1000)
+            .animate({opacity: 1}  , 1000)
+            .animate({opacity: 0}  , 1000)
+            .animate({opacity: 1}  , 1000)
+            .animate({opacity: 0}  , 1000, "swing", =>
+                # start the flash
+                @uis.flash.removeClass("hidden")
+                    .show()
+                    .opacity(1)
+                    .animate({opacity: 0.5}, 300)
+                    .animate({opacity: 1}  , 300)
+                    .animate({opacity: 0}  , 300, "swing")
+                if @isReady
                     @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
-                )
-        else
-            @retry += 1
-            @restartLaterTimeout = setTimeout(@takeSnapshot, 300) unless @retry > 5
+                else
+                    @callback()
+            )
 
     onSnapshotTaken: (canvas) =>
         # to b&w
