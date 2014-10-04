@@ -1,8 +1,14 @@
+<a id="toggle" class="" href="#">
+	<div class="patty"></div>
+</a>
+
 <div class="Menu widget" data-widget="Menu">
-	<a data-bind="click: see_movie.bind($data, 0)" href="#">Video 1</a>
-	<a data-bind="click: see_movie.bind($data, 1)" href="#">Video 2</a>
-	<a data-bind="click: see_movie.bind($data, 2)" href="#">Video 3</a>
-	<a data-bind="click: see_movie.bind($data, 3)" href="#">Video 4</a>
-	<a data-bind="click: mute"                     href="#">Mute</a>
-	<a data-bind="click: about"                    href="#">About</a>
+	<ul>
+		<li><a data-bind="click: see_movie.bind($data, 0)" href="#"><span class="icon video-ico"></span>Story 1</a></li>
+		<li><a data-bind="click: see_movie.bind($data, 1)" href="#"><span class="icon video-ico"></span>Story 2</a></li>
+		<li><a data-bind="click: see_movie.bind($data, 2)" href="#"><span class="icon video-ico"></span>Story 3</a></li>
+		<li><a data-bind="click: see_movie.bind($data, 3)" href="#"><span class="icon video-ico"></span>Story 4</a></li>
+		<li><a data-bind="click: mute"                     href="#"><span class="icon mute-ico"></span>Mute</a></li>
+		<li><a data-bind="click: about"                    href="#"><span class="icon about-ico"></span>About</a></li>
+	</ul>
 </div>
