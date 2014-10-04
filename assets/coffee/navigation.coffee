@@ -31,22 +31,31 @@ class Navigation extends serious.Widget
         @currentScreen = 0
 
     bindUI : =>
+        # get the widget instance
+        @kinoWidget = serious.Widget.ensureWidget(".Kino")
+        # init screen
         @uis.screens.opacity(0)
         @goToScreen(@currentScreen)
         # debug
         @ui.find(".next_screen_debugger")    .click(@nextScreen)
         @ui.find(".previous_screen_debugger").click(@previousScreen)
 
-    goToScreen: (screen_id) =>
+    goToScreen: (screen_id, params) =>
         # support selector by class name
         if typeof(screen_id) == "string"
-            screen_ui = @uis.screens.select(".#{screen_id}")
+            screen_ui = @uis.screens.filter(".#{screen_id}")
             screen_id = @uis.screens.index(screen_ui)
         else
             screen_ui = @uis.screens.eq(screen_id)
         console.log "Navigation::go to screen", screen_id
         @uis.screens.opacity(0)
         screen_ui.opacity(1)
+        # support parameters (for video)
+        if params?
+            # we ask the kino
+            if screen_ui.hasClass("Kino")
+                @kinoWidget.startVideo(params)
+        # update the currentScreen
         @currentScreen = screen_id
 
     nextScreen: =>
@@ -60,12 +69,14 @@ class Navigation extends serious.Widget
 class Menu extends serious.Widget
     bindUI: () =>
         @ko = yes
+        # get the widget instances
+        @navigation = serious.Widget.ensureWidget(".Navigation")
         # define scope available in the template
         @scope.mute      = @mute
         @scope.see_movie = @seeMovie
 
     seeMovie: (movie_id) =>
-        console.log "see movie", movie_id
+        @navigation.goToScreen("Kino", movie_id)
     mute: =>
         console.log "mute ta yeule!"
 

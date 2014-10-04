@@ -171,7 +171,6 @@ a {
 	box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
 	@include transition();
 	
-	display: none;
 }
 
 .Menu {
@@ -200,7 +199,20 @@ a {
 }
 
 
+
 /* PHOTOAUTOMAT */
+
+.Kino {
+	.Kino__screener {
+		position: absolute;
+		top    : 0;
+		left   : 0;
+		right  : 0;
+		bottom : 0;
+		z-index: 9;
+	}
+}
+
 
 .Photoautomat {
 	video {
