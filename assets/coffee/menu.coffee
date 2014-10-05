@@ -76,6 +76,7 @@ class Menu extends serious.Widget
         console.log "mute ta yeule!"
 
     about: =>
+        @navigation.goToScreen("About")
         @close()
 
 # EOF
