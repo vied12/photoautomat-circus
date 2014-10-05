@@ -69,7 +69,8 @@ class Photoautomat extends serious.Widget
                     .opacity(1)
                     .animate({opacity: 0.5}, 300)
                     .animate({opacity: 1}  , 300)
-                    .animate({opacity: 0}  , 300, "swing")
+                    .animate {opacity: 0}  , 300, "swing", =>
+                        @ui.addClass("hidden")
                 if @isReady
                     @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
                 else
