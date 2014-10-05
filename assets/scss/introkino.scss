@@ -6,6 +6,8 @@
     left            : 25%;
     background-size : 100% 100%;
     background-image: url(../images/mirror.png);
+    -webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
 }
 .Photoautomat__kino-button {
     top               : 20%;
