@@ -182,6 +182,14 @@ li {
   -webkit-animation-delay:2s;
 }
 
+.dot4 {
+  left: 80px;
+  animation: appear 6s infinite;
+  -webkit-animation: appear 6s infinite;
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
+}
+
 @keyframes appear {
     0% { opacity:0; }
    49% { opacity:0; }
