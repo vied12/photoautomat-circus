@@ -31,7 +31,7 @@ class Photoautomat extends serious.Widget
             # red_button : ".Photoautomat__red-button"
             mirrors_off : ".Photoautomat__mirror.off"
             mirrors_on : ".Photoautomat__mirror.on"
-        
+            sound_flash : "#Photoautomat__sound__flash"
         @CONFIG =
             default_size : [80, 100]
         
@@ -67,7 +67,7 @@ class Photoautomat extends serious.Widget
                 @uis.flash.removeClass("hidden")
                     .show()
                     .opacity(1)
-                    .animate({opacity: 0.5}, 300)
+                    .animate({opacity: 0.5}, 300, null, (=> @uis.sound_flash.get(0).play()))
                     .animate({opacity: 1}  , 300)
                     .animate {opacity: 0}  , 300, "swing", =>
                         @ui.addClass("hidden")
