@@ -49,6 +49,14 @@ $transparent: rgba(255,255,255,9);
     
 }
 
+@mixin btn {
+    padding: 10px 20px;
+    @include border-radius(1px);
+    color: white;
+    cursor: pointer;
+    
+}
+
 @mixin grayscale {
     -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -78,15 +86,19 @@ body {
 
 /* TYPOGRAPHY */
 
+h2 {
+    font-size: 1.25em;
+}
+
 a {
     color: $primary-color;
     text-decoration: none;
 }
 
 p {
-    font-size: .85em;
-    line-height: 1.65em;
-    margin-bottom: 2em;
+    font-size: .8em;
+    line-height: 1.75em;
+    margin-bottom: 3em;
 }
 
 ul {
