@@ -25,13 +25,37 @@
 
 class Home extends serious.Widget
 
-	constructor: ->
-		@UIS =
-			drapes : ".drapes"
+    constructor: ->
+        @UIS =
+            iframe : "iframe"
+        @cancel = no
 
-	onArrive: =>
-		$("body").removeClass("without-navigation")
-		# replay the gif animation
-		@uis.drapes.css("background-image", "url(static/images/drapes.gif?v=#{new Date().getTime()})")
+    bindUI: =>
+        @navigation = serious.Widget.ensureWidget(".Navigation")
+        @player     = $f(@uis.iframe.get(0))
+        @player.addEvent 'ready', =>
+            @player.addEvent 'finish' , =>
+                @navigation.nextScreen() unless @cancel
+
+    onArrive: =>
+        $("body").removeClass("without-navigation")
+        @cancel = no
+        # start the video
+        @player.api("play")
+
+    onLeave: =>
+        @cancel = yes
+        # stop the video
+        @player.api("pause")
+        @player.api("unload")
+
+    # constructor: ->
+    #   @UIS =
+    #       drapes : ".drapes"
+
+    # onArrive: =>
+    #   $("body").removeClass("without-navigation")
+    #   # replay the gif animation
+    #   @uis.drapes.css("background-image", "url(static/images/drapes.gif?v=#{new Date().getTime()})")
 
 # EOF
