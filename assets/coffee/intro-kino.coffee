@@ -31,6 +31,11 @@ class IntroKino extends serious.Widget
             sound_cabine: "#Intro-kino__sound__cabine"
             sound_argent: "#Intro-kino__sound__argent"
     
+    bindUI: =>
+        @ko = yes
+        @navigation = serious.Widget.ensureWidget(".Navigation")
+        @scope.next = @navigation.nextScreen
+
     onArrive: =>
         @photoautomatWidget.askPermission()
         @uis.sound_cabine.get(0).play()

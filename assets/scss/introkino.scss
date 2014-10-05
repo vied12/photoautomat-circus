@@ -18,6 +18,11 @@
     background-image  : url(../images/button.png);
     max-height        : 377px;
     max-width         : 197px;
+
+    &:hover {
+        background-image  : url(../images/button_on.png);
+        cursor: pointer;
+    }
 }
 .Intro-kino {
 
@@ -30,10 +35,6 @@ background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba
 background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-
-
-    
     img {
         width: 100%;
         height: auto;
