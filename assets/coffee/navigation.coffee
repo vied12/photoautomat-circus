@@ -36,9 +36,6 @@ class Navigation extends serious.Widget
         # init screen
         @uis.screens.opacity(0).hide()
         @goToScreen(@currentScreen) # Loader
-        # TODO: to be removed (debug)
-        @ui.find(".next_screen_debugger")    .click(@nextScreen)
-        @ui.find(".previous_screen_debugger").click(@previousScreen)
 
     itsReady: =>
         # after preload
