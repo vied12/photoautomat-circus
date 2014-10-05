@@ -49,7 +49,7 @@ class Kino extends serious.Widget
         # update currentVideo
         @currentVideo = video_id
         # set the video url into the iframe
-        @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=Kino_iframe")
+        @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=Kino_iframe_#{video_id}").attr("id", "Kino_iframe_#{video_id}")
         # get the video api
         player = $f(@uis.iframe.get(0))
         player.addEvent 'ready', =>
