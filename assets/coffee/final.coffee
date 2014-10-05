@@ -26,6 +26,5 @@
 class Final extends serious.Widget
 
     bindUI: =>
-    	console.log "final"
 
 # EOF

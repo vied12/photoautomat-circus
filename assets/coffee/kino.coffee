@@ -55,7 +55,6 @@ class Kino extends serious.Widget
         @uis.iframe.attr("src", "")
 
     startVideo: (video_id) =>
-        console.log "KINO::startVideo", video_id
         # update currentVideo
         @currentVideo = video_id
         # set the video url into the iframe
@@ -71,10 +70,8 @@ class Kino extends serious.Widget
             @player.api("play")
 
     onPlayProgress:(data, id) =>
-        console.log "KINO::onPlayProgress", data, id
 
     onFinish: =>
-        console.log "KINO::onFinish"
         # remove the video from the screen
         @uis.iframe.attr("src", "")
         # there is a next video
@@ -85,7 +82,6 @@ class Kino extends serious.Widget
             @navigation.nextScreen()
 
     onPause: =>
-        console.log "KINO::onPause"
 
     startPhotoTransition: =>
         @photoautomatWidget.takeSnapshot =>

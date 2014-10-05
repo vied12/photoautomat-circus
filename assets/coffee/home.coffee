@@ -31,7 +31,6 @@ class Home extends serious.Widget
         @cancel = no
 
     bindUI: =>
-        console.log "home"
         @navigation = serious.Widget.ensureWidget(".Navigation")
         @player     = $f(@uis.iframe.get(0))
         @player.addEvent 'ready', =>
