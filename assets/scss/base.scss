@@ -143,5 +143,58 @@ li {
 @import "modal.scss";
 
 
+/* LOADER */
+
+.new-loader {
+  position: relative;
+  width: 130px;
+  margin: 100px auto;
+}
+
+.dot1, .dot2, .dot3, .dot4 {
+  border:  2px solid #fff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}  
+
+.dot1 {
+ opacity: 0;
+ animation: appear 6s infinite;
+ -webkit-animation: appear 6s infinite;   
+} 
+
+
+.dot2 {
+  opacity: 0;
+  left: 40px;
+  animation: appear 6s infinite;
+  -webkit-animation: appear 6s infinite;
+  animation-delay:1s;
+  -webkit-animation-delay:1s;
+}
+
+.dot3 {
+  left: 80px;
+  animation: appear 6s infinite;
+  -webkit-animation: appear 6s infinite;
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
+}
+
+@keyframes appear {
+    0% { opacity:0; }
+   49% { opacity:0; }
+   50% { opacity:1; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes appear {
+    0% { opacity:0; }
+   49% { opacity:0; }
+   50% { opacity:1; }
+  100% { opacity:1; }
+}
+
 
 // EOF

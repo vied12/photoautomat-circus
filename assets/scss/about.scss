@@ -16,7 +16,7 @@
         height: 100%;
         right: 0;
         top: 0;
-        padding: 5%;
+        padding: 15% 5%;
         color: white;
     }
     
@@ -28,4 +28,13 @@
         font-size: .8em;
         line-height: 1.75em;
     }
+    a{
+        color: #fff;
+    }
+    
+    a:hover  {
+        color: $red;
+    }
+    
+    
 }
