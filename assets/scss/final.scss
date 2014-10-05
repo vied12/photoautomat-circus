@@ -9,23 +9,37 @@
     background: radial-gradient(ellipse at center,  rgba(198,43,39,1) 0%,rgba(173,36,34,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c62b27', endColorstr='#ad2422',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     
-    .receptacle {
-        position: absolute;
-        top: 130px;
-        left: 200px;
-        background: #111 url('../images/receptacle-bg.png') no-repeat left top;
-        width: 226px;
-        height: 450px;
-        -webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
-        box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
-        background-size: 100%;
+    .Final__receptacle {
+        position           : absolute;
+        top                : 130px;
+        left               : 200px;
+        background         : #111 url('../images/receptacle-bg.png') no-repeat left top;
+        width              : 226px;
+        height             : 450px;
+        overflow           : hidden;
+        -webkit-box-shadow : 0 0 10px 3px rgba(0,0,0,.5);
+        box-shadow         : 0 0 10px 3px rgba(0,0,0,.5);
+        background-size    : 100%;
+        > img {
+            position : relative;
+            z-index  : 4;
+            width    : 226px;
+            height   : 450px;
+        }
+        .Final__receptacle__photo {
+            top                 : 300;
+            transition-duration : .25s;
+            transition-property : top;
+            position            : absolute;
+            z-index             : 3;
+            left                : 47px;
+            transform           : rotate(-2deg);
+            -moz-transform      : rotate(-2deg);
+            -webkit-transform   : rotate(-2deg);
+        }
     }
     
-    
-    img {
-        width: 226px;
-        height: 450px;
-    }
+
     
     .right {
         width: 50%;

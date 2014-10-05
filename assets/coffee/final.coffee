@@ -25,6 +25,21 @@
 
 class Final extends serious.Widget
 
+    constructor: ->
+        @UIS = 
+            receptacle : ".Final__receptacle"
+            photo      : ".Final__receptacle__photo"
+
     bindUI: =>
+        @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
+
+    onArrive: =>
+        photo = @photoautomatWidget.getPhoto()
+        @uis.photo
+            .css("top":300)
+            .html(photo)
+        setTimeout(
+            @uis.photo.css("top":0)
+        ,2000)
 
 # EOF
