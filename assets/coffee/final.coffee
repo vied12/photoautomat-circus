@@ -23,31 +23,9 @@
 #     You should have received a copy of the GNU General Public License
 #     along with Serious-Toolkit.  If not, see <http://www.gnu.org/licenses/>.
 
-class Home extends serious.Widget
-
-    constructor: ->
-        @UIS =
-            iframe : "iframe"
-        @cancel = no
+class Final extends serious.Widget
 
     bindUI: =>
-        console.log "home"
-        @navigation = serious.Widget.ensureWidget(".Navigation")
-        @player     = $f(@uis.iframe.get(0))
-        @player.addEvent 'ready', =>
-            @player.addEvent 'finish' , =>
-                @navigation.nextScreen() unless @cancel
-
-    onArrive: =>
-        $("body").removeClass("without-navigation")
-        @cancel = no
-        # start the video
-        @player.api("play")
-
-    onLeave: =>
-        @cancel = yes
-        # stop the video
-        @player.api("pause")
-        @player.api("unload")
+    	console.log "final"
 
 # EOF

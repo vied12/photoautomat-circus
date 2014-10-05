@@ -43,6 +43,7 @@ js_all:
       - "../assets/coffee/intro-kino.coffee"
       - "../assets/coffee/home.coffee"
       - "../assets/coffee/kino.coffee"
+      - "../assets/coffee/final.coffee"
       - "../assets/coffee/photoautomat.coffee"
       output: gen/coffee.js
       filters: coffeescript
