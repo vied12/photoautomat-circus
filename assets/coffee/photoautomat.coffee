@@ -28,7 +28,9 @@ class Photoautomat extends serious.Widget
     constructor: ->
         @UIS    =
             flash      : ".Photoautomat__flash"
-            red_button : ".Photoautomat__red-button"
+            # red_button : ".Photoautomat__red-button"
+            mirrors_off : ".Photoautomat__mirror .off"
+            mirrors_on : ".Photoautomat__mirror .on"
         
         @CONFIG =
             default_size : [80, 100]
@@ -51,16 +53,16 @@ class Photoautomat extends serious.Widget
         @callback = callback or (->)
         @ui.removeClass("hidden")
         # start the red light
-        @uis.red_button
+        @uis.mirrors_on
             .opacity(0)
-            .show()
             .removeClass("hidden")
+        @uis.mirrors_on
             .animate({opacity: 1}  , 1000)
             .animate({opacity: 0}  , 1000)
             .animate({opacity: 1}  , 1000)
             .animate({opacity: 0}  , 1000)
             .animate({opacity: 1}  , 1000)
-            .animate({opacity: 0}  , 1000, "swing", =>
+            .animate {opacity: 0}  , 1000, null, =>
                 # start the flash
                 @uis.flash.removeClass("hidden")
                     .show()
@@ -72,7 +74,6 @@ class Photoautomat extends serious.Widget
                     @sayCheese.takeSnapshot(@CONFIG.default_size[0], @CONFIG.default_size[1])
                 else
                     @callback()
-            )
 
     onSnapshotTaken: (canvas) =>
         # to b&w

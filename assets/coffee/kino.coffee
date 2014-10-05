@@ -36,13 +36,23 @@ class Kino extends serious.Widget
             screener : ".Kino__screener"
             iframe   : ".Kino__screener iframe"
         @CONFIG = Kino.CONFIG
+        @currentVideo = 0
 
     bindUI: () =>
         @navigation         = serious.Widget.ensureWidget(".Navigation")
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
 
     onArrive: (video_id) =>
-        @startVideo(video_id or 0)
+        @startVideo(video_id or @currentVideo)
+
+    onLeave: =>
+        @cancel = yes
+        # stop the video
+        if @player
+            @player.api("pause")
+            @player.api("unload")
+        @player = null
+        @uis.iframe.attr("src", "")
 
     startVideo: (video_id) =>
         console.log "KINO::startVideo", video_id
@@ -51,14 +61,14 @@ class Kino extends serious.Widget
         # set the video url into the iframe
         @uis.iframe.attr("src", "//player.vimeo.com/video/#{_.last(@CONFIG.videos[video_id].split("/"))}?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=Kino_iframe_#{video_id}").attr("id", "Kino_iframe_#{video_id}")
         # get the video api
-        player = $f(@uis.iframe.get(0))
-        player.addEvent 'ready', =>
+        @player = $f(@uis.iframe.get(0))
+        @player.addEvent 'ready', =>
             # bind some events
-            player.addEvent('finish'      , @onFinish)
+            @player.addEvent('finish'      , @onFinish)
             # player.addEvent('pause'       , @onPause)
             # player.addEvent('playProgress', @onPlayProgress)
             # start the video
-            player.api("play")
+            @player.api("play")
 
     onPlayProgress:(data, id) =>
         console.log "KINO::onPlayProgress", data, id

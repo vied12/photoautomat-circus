@@ -1,20 +1,25 @@
 .Photoautomat {
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     top     : 0;
     left    : 0;
     right   : 0;
     bottom  : 0;
     z-index : 11;
+    background: rgb(51,51,51); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%, rgba(17,17,17,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(51,51,51,1)), color-stop(100%,rgba(17,17,17,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(51,51,51,1) 0%,rgba(17,17,17,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+    // feedback of webcam
     video {
         display: none;
     }
-    .Photoautomat__red-button {
-        position         : fixed;
-        top              : 50%;
-        left             : 50%;
-        transform: translate(-50%, -50%);
-    }
+
     .Photoautomat__flash {
         background-color : white;
         position         : fixed;
@@ -22,6 +27,28 @@
         left             : 0;
         right            : 0;
         bottom           : 0;
+    }
+
+    .Photoautomat__mirror {
+        position: absolute;
+        top: 15%;
+        width: 30%;
+        height: auto;
+        left: 25%;
+        img {
+            position: absolute;
+        }
+    }
+    .Photoautomat__kino-button {
+        position: absolute;
+        top: 28.5%;
+        width: 15%;
+        right: 20%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
     }
 }
 
