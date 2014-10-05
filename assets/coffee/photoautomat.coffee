@@ -31,7 +31,7 @@ class Photoautomat extends serious.Widget
             red_button : ".Photoautomat__red-button"
         
         @CONFIG =
-            default_size : [200, 160]
+            default_size : [80, 100]
         
         @photoTaken = []
         @isReady   = no
@@ -96,5 +96,17 @@ class Photoautomat extends serious.Widget
         # image.src = canvas.toDataURL("image/png")
         # # @ui.find(".positif").append(image)
         # @ui.append(image)
+
+    getPhoto: =>
+        positif = $("<div>")
+            .addClass("positif")
+        for pic_canvas in @photoTaken
+            img = new Image()
+            img.src = pic_canvas.toDataURL("image/png")
+            positif.append(img)
+            positif.append($(img).clone())
+            positif.append($(img).clone())
+            positif.append($(img).clone())
+        return positif
 
 # EOF
