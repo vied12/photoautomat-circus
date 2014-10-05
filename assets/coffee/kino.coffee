@@ -27,7 +27,7 @@ class Kino extends serious.Widget
 
     @CONFIG = 
         videos : [
-            "https://vimeo.com/103544659"
+            "https://vimeo.com/108045789"
             "https://vimeo.com/108038203"
             "https://vimeo.com/108038204"
         ]

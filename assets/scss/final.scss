@@ -71,9 +71,11 @@
     }
     
     .credits {
-        position: absolute;
+        position: fixed;
         bottom: 30px;
         right: 30px;
+        color: #fff;
+        font-size: .75em;
     }
   
 }
