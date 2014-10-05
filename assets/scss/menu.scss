@@ -82,6 +82,9 @@
 }
 
 .without-navigation {
+    .Menu {
+        opacity: 0;
+    }
     .Menu__toggle {
         opacity: 0;
     }
