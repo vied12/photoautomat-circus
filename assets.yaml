@@ -38,6 +38,7 @@ js_all:
       - "../assets/vendors/serious-toolkit/widget.coffee"
       - "../assets/coffee/navigation.coffee"
       - "../assets/coffee/menu.coffee"
+      - "../assets/coffee/modal.coffee"
       - "../assets/coffee/intro.coffee"
       - "../assets/coffee/intro-kino.coffee"
       - "../assets/coffee/home.coffee"

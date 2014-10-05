@@ -1,0 +1,28 @@
+.Modal {
+	.Modal__overlay {
+		background-color : rgba(0,0,0,.3);
+		position         : fixed;
+		left             :0;
+		right            : 0;
+		top              :0;
+		bottom           :0;
+	}
+	.Modal__body {
+		position         : fixed;
+		top              : 200px;
+		left             : 50%;
+		transform        : translate(-50%, -50%);
+		width            : 50%;
+		min-width        : 300px;
+		color            : black;
+		padding          : 20px;
+		background-color : rgba(255,255,255,.9);
+
+		.close-reveal-modal {
+			position  : absolute;
+			right     : 0;
+			top       : 0;
+			font-size : 3em;
+		}
+	}
+}
