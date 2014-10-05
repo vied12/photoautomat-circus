@@ -27,7 +27,7 @@ class Kino extends serious.Widget
 
     @CONFIG = 
         videos : [
-            "http://vimeo.com/103544659"
+            "https://vimeo.com/103544659"
             "https://vimeo.com/108038203"
             "https://vimeo.com/108038204"
         ]
@@ -49,9 +49,12 @@ class Kino extends serious.Widget
     onLeave: =>
         @cancel = yes
         # stop the video
-        if @player
-            @player.api("pause")
-            @player.api("unload")
+        try
+            if @player
+                @player.api("pause")
+                @player.api("unload")
+        catch e
+            console.log e.message
         @player = null
         @uis.iframe.attr("src", "")
 

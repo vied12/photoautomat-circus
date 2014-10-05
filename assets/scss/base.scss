@@ -127,6 +127,9 @@ li {
     bottom : 0;
 }
 
+.loading .screen {
+  display: none;
+}
 
 @import "header.scss";
 @import "home.scss";

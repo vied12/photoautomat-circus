@@ -39,6 +39,7 @@ class Intro extends serious.Widget
 
     onArrive: =>
         @cancel = no
+        $("body").removeClass("without-navigation")
         # start the video
         @player.api("play")
 
