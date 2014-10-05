@@ -32,12 +32,19 @@
 		.close-reveal-modal {
 			position  : absolute;
 			right     : 10px;
-			top       : 0;
+			top       : 7px;
 			font-size : 3em;
 			cursor: pointer;
-			width: 20px;
-			height: 20px;
-			line-height: 20px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			color: #fff;
+			text-align: center;
+		}
+		
+		.btn {
+		    //background: #fff;
+		    @include btn();
 		}
 	}
 }
