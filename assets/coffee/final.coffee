@@ -38,7 +38,7 @@ class Final extends serious.Widget
         @uis.photo
             .css("top":300)
             .html(photo)
-        setTimeout(
+        setTimeout(=>
             @uis.photo.css("top":0)
         ,2000)
 

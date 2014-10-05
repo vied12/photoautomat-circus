@@ -34,7 +34,12 @@ class IntroKino extends serious.Widget
     bindUI: =>
         @ko = yes
         @navigation = serious.Widget.ensureWidget(".Navigation")
-        @scope.next = @navigation.nextScreen
+        @scope.next = =>
+            @uis.sound_argent.get(0).play()
+            setTimeout(=>
+                @photoautomatWidget.takeSnapshot =>
+                    @navigation.nextScreen()
+            , 500)
 
     onArrive: =>
         @photoautomatWidget.askPermission()
@@ -42,6 +47,5 @@ class IntroKino extends serious.Widget
 
     onLeave: =>
         @uis.sound_cabine.get(0).pause()
-        @uis.sound_argent.get(0).play()
 
 # EOF
