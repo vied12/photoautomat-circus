@@ -26,14 +26,15 @@
 class IntroKino extends serious.Widget
 
     constructor: ->
-        @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
         @UIS =
             sound_cabine: "#Intro-kino__sound__cabine"
             sound_argent: "#Intro-kino__sound__argent"
     
     bindUI: =>
         @ko = yes
+        @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
         @navigation = serious.Widget.ensureWidget(".Navigation")
+        @modal = serious.Widget.ensureWidget("#Modal__intro-kino")
         @scope.next = =>
             @uis.sound_argent.get(0).play()
             setTimeout(=>
@@ -44,6 +45,7 @@ class IntroKino extends serious.Widget
     onArrive: =>
         @photoautomatWidget.askPermission()
         @uis.sound_cabine.get(0).play()
+        @modal.open()
 
     onLeave: =>
         @uis.sound_cabine.get(0).pause()
