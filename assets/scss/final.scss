@@ -27,9 +27,9 @@
             height   : 450px;
         }
         .Final__receptacle__photo {
-            top                 : 300;
+            bottom              : 300;
             transition-duration : .25s;
-            transition-property : top;
+            transition-property : bottom;
             position            : absolute;
             z-index             : 3;
             left                : 47px;
@@ -38,9 +38,7 @@
             -webkit-transform   : rotate(-2deg);
         }
     }
-    
 
-    
     .right {
         width: 50%;
         height: 100%;

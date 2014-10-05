@@ -94,10 +94,6 @@ class Photoautomat extends serious.Widget
         @photoTaken.push(canvas)
         @callback(canvas)
         @callback = null
-        # image = new Image()
-        # image.src = canvas.toDataURL("image/png")
-        # # @ui.find(".positif").append(image)
-        # @ui.append(image)
 
     getPhoto: =>
         positif = $("<div>")
@@ -106,9 +102,9 @@ class Photoautomat extends serious.Widget
             img = new Image()
             img.src = pic_canvas.toDataURL("image/png")
             positif.append(img)
-            positif.append($(img).clone())
-            positif.append($(img).clone())
-            positif.append($(img).clone())
+        if positif.length < 4
+            for i in [0..(4-positif.length)] by 1
+                positif.prepend($(img).clone())
         return positif
 
 # EOF

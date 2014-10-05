@@ -36,10 +36,11 @@ class Final extends serious.Widget
     onArrive: =>
         photo = @photoautomatWidget.getPhoto()
         @uis.photo
-            .css("top":300)
+            .hide()
+            .css("bottom":300)
             .html(photo)
         setTimeout(=>
-            @uis.photo.css("top":0)
+            @uis.photo.show().css("bottom":30)
         ,2000)
 
 # EOF
