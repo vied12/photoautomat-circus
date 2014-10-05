@@ -29,8 +29,8 @@ class Photoautomat extends serious.Widget
         @UIS    =
             flash      : ".Photoautomat__flash"
             # red_button : ".Photoautomat__red-button"
-            mirrors_off : ".Photoautomat__mirror .off"
-            mirrors_on : ".Photoautomat__mirror .on"
+            mirrors_off : ".Photoautomat__mirror.off"
+            mirrors_on : ".Photoautomat__mirror.on"
         
         @CONFIG =
             default_size : [80, 100]
