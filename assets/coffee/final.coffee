@@ -31,7 +31,10 @@ class Final extends serious.Widget
             photo      : ".Final__receptacle__photo"
 
     bindUI: =>
+        @ko = yes
+        @navigation = serious.Widget.ensureWidget(".Navigation")
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
+        @scope.about = =>(@navigation.goToScreen("About"))
 
     onArrive: =>
         photo = @photoautomatWidget.getPhoto()
