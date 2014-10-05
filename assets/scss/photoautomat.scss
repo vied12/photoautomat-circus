@@ -30,12 +30,7 @@
     }
 
     .Photoautomat__mirror {
-        position        : absolute;
-        top             : 15%;
-        width           : 30%;
-        height          : 70%;
-        left            : 25%;
-        background-size : 100% 100%;
+
         &.off {
             background-image: url(../images/mirror.png);
         }
@@ -43,15 +38,7 @@
             background-image: url(../images/mirror-on.png);
         }
     }
-    .Photoautomat__kino-button {
-        position: absolute;
-        top: 28.5%;
-        width: 15%;
-        right: 20%;
-        height: 70%;
-        background-size : 100% 100%;
-        background-image: url(../images/button.png);
-    }
+
 }
 
 .positif {
