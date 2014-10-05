@@ -25,10 +25,18 @@
 
 class IntroKino extends serious.Widget
 
-	constructor: ->
+    constructor: ->
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
-
-	onArrive: =>
+        @UIS =
+            sound_cabine: "#Intro-kino__sound__cabine"
+            sound_argent: "#Intro-kino__sound__argent"
+    
+    onArrive: =>
         @photoautomatWidget.askPermission()
+        @uis.sound_cabine.get(0).play()
+
+    onLeave: =>
+        @uis.sound_cabine.get(0).pause()
+        @uis.sound_argent.get(0).play()
 
 # EOF
