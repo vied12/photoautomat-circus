@@ -27,7 +27,12 @@
         position: relative;
         top: 0;
         left: 0;
-        @include grayscale();
+        @include grayscale(); 
+    }
+    
+    li img {
+        width: 200px;
+        height: 133px;
     }
     
     a:hover img {
