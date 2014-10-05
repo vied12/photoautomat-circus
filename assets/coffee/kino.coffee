@@ -45,7 +45,9 @@ class Kino extends serious.Widget
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
 
     onArrive: (video_id) =>
-        @startVideo(video_id or @currentVideo)
+        if video_id == undefined
+            video_id = @currentVideo
+        @startVideo(video_id)
 
     onLeave: =>
         @cancel = yes

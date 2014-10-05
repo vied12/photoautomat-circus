@@ -164,10 +164,9 @@ li {
  -webkit-animation: appear 6s infinite;   
 } 
 
-
 .dot2 {
   opacity: 0;
-  left: 40px;
+  left: 20px;
   animation: appear 6s infinite;
   -webkit-animation: appear 6s infinite;
   animation-delay:1s;
@@ -175,7 +174,7 @@ li {
 }
 
 .dot3 {
-  left: 80px;
+  left: 40px;
   animation: appear 6s infinite;
   -webkit-animation: appear 6s infinite;
   animation-delay:2s;
@@ -183,11 +182,11 @@ li {
 }
 
 .dot4 {
-  left: 80px;
+  left: 60px;
   animation: appear 6s infinite;
   -webkit-animation: appear 6s infinite;
-  animation-delay:2s;
-  -webkit-animation-delay:2s;
+  animation-delay:3s;
+  -webkit-animation-delay:3s;
 }
 
 @keyframes appear {
