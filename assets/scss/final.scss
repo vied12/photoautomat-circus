@@ -42,12 +42,34 @@
 
     
     .right {
-        width: 50%;
-        height: 100%;
+        width: auto;
+        max-width: 400px;
+        height: 300px;
         position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #fff;
+        top: 50%;
+        margin-top: -150px;
+        left: 580px;
+        padding: 20px;
+        color: white;
+    }
+    
+    .btn {
+        @include btn();
+        @include transition();
+        font-size: .75em;
+        background: white;
+        color: $dark;
+        margin-right: 10px;
+    }
+    
+    .btn:hover {
+        color: #fff;
+        background: $dark;
+    }
+    
+    .btn span img {
+        width: 12px;
+        height: 12px;
     }
   
 }
