@@ -5,26 +5,38 @@
 	</a>
 	<div class="Menu__panel">
 		<ul>
-		    <li class="small">
-			    <a data-bind="click: mute" href="#"><span class="icon mute-ico"></span></a>
-			    <a data-bind="click: about" href="#"><!--<span class="icon about-ico">--></span>about</a>
-		    </li>
-		
 			<li><a data-bind="click: see_movie.bind($data, 0)" href="#">
-			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
-			<!-- <span class="icon video-ico"></span>Story 1--></a></li> 
+        			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+        	<div class="overlay">
+        			<span class="video-ico"></span>
+    			</div>
+			</a></li> 
 			
 			<li><a data-bind="click: see_movie.bind($data, 1)" href="#">
-			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
-			<!-- <span class="icon video-ico"></span>Story 2--></a></li>
+			        <img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
 			
 			<li><a data-bind="click: see_movie.bind($data, 2)" href="#">
-			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
-			<!-- <span class="icon video-ico"></span>Story 3--></a></li>
+			        <img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
 			
 			<li><a data-bind="click: see_movie.bind($data, 3)" href="#">
-			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
-			<!-- <span class="icon video-ico"></span>Story 4--></a></li>
+			        <img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
 		</ul>
+		<div class="small">
+		    <a class="icon"  href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/expand.svg") }}" alt="full screen" /></a>
+		    <a class="icon" data-bind="click: mute" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/volume-mute.svg") }}" alt="mute" /></a>
+		    <a class="icon" data-bind="click: about" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/about.svg") }}" alt="about" /></a>
+		</div>
 	</div>
 </div>

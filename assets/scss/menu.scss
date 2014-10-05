@@ -4,21 +4,21 @@
     right:0px;
     width: 200px;
     height: 100%;
-    background: $transparent;
-    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-    box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
     @include transition();
+    -webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+    background: #17171b;
  
      ul {
-     border: 10px solid $dark;
+     border-bottom: 10px solid $dark;
      }
  
     li {
-        border-bottom: 10px solid $dark;
+        border: 10px solid $dark;
+        border-bottom: none;
     }
     
     a {
-        display: block;
         font-size: .85em;
         line-height: 0;
     }
@@ -40,25 +40,29 @@
     
     .small {
         height: 40px;
-    }
-    
-    .small a {
-        float: left;
-        width: 80px;
-        height: 40px;
-        line-height: 40px;
+        padding: 10px;
+        text-align: center;
     }
 }
 
 
 .icon {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: $grey;
-    margin-right: 15px;
+    width: 16px;
+    height: 16px;
+    padding: 10px;
+    margin: 5px;
     vertical-align: middle;
+    border: 1px solid white;
+    border-radius: 100%;
+    
+    @include transition();
 }
+
+.icon:hover {
+    opacity: .4;
+}
+
 
 .video-ico {
     background: url(../images/play.svg) no-repeat center;
@@ -88,7 +92,6 @@
     position: fixed;
     right: 10px;
     top: 15px;
-    z-index: 1000;
     -webkit-transition: all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
     -moz-transition:    all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
     -ms-transition:     all 0.2s cubic-bezier(0.7, 0.01, 0.3, 1) 1.5s;
@@ -136,11 +139,19 @@
         
         .patty:after {
             top: 21px !important;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
             transform: rotate(45deg);
         }
         
         .patty:before {
             top: 21px !important;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
             transform: rotate(-45deg);
         } 
     }
