@@ -9,5 +9,30 @@
     background: radial-gradient(ellipse at center,  rgba(198,43,39,1) 0%,rgba(173,36,34,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c62b27', endColorstr='#ad2422',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     
+    .receptacle {
+        position: absolute;
+        top: 130px;
+        left: 200px;
+        background: #111 url('../images/receptacle-bg.png') no-repeat left top;
+        width: 226px;
+        height: 450px;
+        -webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+        box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+    }
+    
+    
+    img {
+        width: 226px;
+        height: 450px;
+    }
+    
+    .right {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+    }
   
 }
