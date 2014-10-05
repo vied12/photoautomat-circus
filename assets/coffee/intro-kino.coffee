@@ -33,8 +33,8 @@ class IntroKino extends serious.Widget
     bindUI: =>
         @ko = yes
         @photoautomatWidget = serious.Widget.ensureWidget(".Photoautomat")
-        @navigation = serious.Widget.ensureWidget(".Navigation")
-        @modal = serious.Widget.ensureWidget("#Modal__intro-kino")
+        @navigation         = serious.Widget.ensureWidget(".Navigation")
+        @modal              = serious.Widget.ensureWidget("#Modal__intro-kino")
         @scope.next = =>
             @uis.sound_argent.get(0).play()
             setTimeout(=>

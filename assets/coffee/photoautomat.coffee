@@ -27,10 +27,9 @@ class Photoautomat extends serious.Widget
 
     constructor: ->
         @UIS    =
-            flash      : ".Photoautomat__flash"
-            # red_button : ".Photoautomat__red-button"
+            flash       : ".Photoautomat__flash"
             mirrors_off : ".Photoautomat__mirror.off"
-            mirrors_on : ".Photoautomat__mirror.on"
+            mirrors_on  : ".Photoautomat__mirror.on"
             sound_flash : "#Photoautomat__sound__flash"
         @CONFIG =
             default_size : [80, 100]
@@ -40,12 +39,15 @@ class Photoautomat extends serious.Widget
 
     bindUI: =>
         that = this
+        @modal = serious.Widget.ensureWidget("#Modal__intro-kino")
 
     askPermission: =>
         # initialize webcam manager
         @sayCheese = new SayCheese(@ui.get(0), audio: false)
-        @sayCheese.on("start", => @isReady = yes)
         @sayCheese.on("snapshot", @onSnapshotTaken)
+        @sayCheese.on "start", =>
+            @isReady = yes
+            @modal.close()
         @sayCheese.start()
 
     takeSnapshot: (callback) =>
