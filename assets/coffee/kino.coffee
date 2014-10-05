@@ -28,7 +28,8 @@ class Kino extends serious.Widget
     @CONFIG = 
         videos : [
             "http://vimeo.com/103544659"
-            "http://vimeo.com/61473487"
+            "https://vimeo.com/108038203"
+            "https://vimeo.com/108038204"
         ]
 
     constructor: ->
