@@ -32,9 +32,9 @@ class Modal extends serious.Widget
         @scope.close = @close
 
     open: =>
-        @ui.show()
+        @ui.removeClass("hidden")
 
     close: =>
-        @ui.hide()
+        @ui.addClass("hidden")
 
 # EOF
