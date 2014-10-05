@@ -49,5 +49,6 @@ class IntroKino extends serious.Widget
 
     onLeave: =>
         @uis.sound_cabine.get(0).pause()
+        @modal.close()
 
 # EOF

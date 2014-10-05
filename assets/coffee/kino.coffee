@@ -36,6 +36,7 @@ class Kino extends serious.Widget
         @UIS =
             screener : ".Kino__screener"
             iframe   : ".Kino__screener iframe"
+            more     : ".Kino__more"
         @CONFIG = Kino.CONFIG
         @currentVideo = 0
 
@@ -72,6 +73,13 @@ class Kino extends serious.Widget
             # player.addEvent('playProgress', @onPlayProgress)
             # start the video
             @player.api("play")
+        # bind modal on button click
+        @uis.more.click =>
+            modal = serious.Widget.ensureWidget("#Modal__Video#{@currentVideo}")
+            modal.open()
+
+    openModal: () =>
+
 
     onPlayProgress:(data, id) =>
 
