@@ -51,11 +51,6 @@ def index():
     response = make_response(render_template('page-home.html'))
     return response
 
-@app.route('/webcam')
-def webcam():
-    g.language = "en"
-    response = make_response(render_template('page-webcam.html'))
-    return response
 # -----------------------------------------------------------------------------
 #
 #    UTILS
