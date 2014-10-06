@@ -48,5 +48,5 @@ Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000)
 You have to add a BASE_URL to generate some absolute urls.
 
 ```bash
-make freeze BASE_URL=http://vied12.github.io/%s/
+make freeze BASE_URL=http://vied12.github.io/photoautomat-circus/
 ```
