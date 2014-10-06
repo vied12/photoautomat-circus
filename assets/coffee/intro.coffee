@@ -37,6 +37,8 @@ class Intro extends serious.Widget
             @player.addEvent('playProgress', @onPlayProgress)
             @player.addEvent 'finish' , =>
                 @navigation.nextScreen() unless @cancel
+        @player.addEvent('playProgress', @onPlayProgress)
+
 
     onPlayProgress: (data, id) =>
         if data.seconds >= (data.duration - 0.01) or data.percent > .99
