@@ -9,6 +9,24 @@
     background: radial-gradient(ellipse at center,  rgba(198,43,39,1) 0%,rgba(173,36,34,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c62b27', endColorstr='#ad2422',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     
+    .Final__sandbox {
+        position: absolute;
+        display: none;
+        top:30000px;
+    }
+    .Final__body {
+        z-index: 4;
+        position: relative;
+    }
+    .Final__photo {
+        position: absolute;
+        right: -2px;
+        transform: rotate(13deg);
+        -moz-transform: rotate(13deg);
+        -webkit-transform: rotate(13deg);
+        top: -118px;
+        z-index: 3;
+    }
     .Final__receptacle {
         position           : absolute;
         top                : 130px;
@@ -28,7 +46,11 @@
         }
         .Final__receptacle__photo {
             bottom              : 300px;
-            transition-duration : .25s;
+            transition-duration : 1.50s;
+            -moz-transition-duration : 1.50s;
+            -webkit-transition-duration : 1.50s;
+            -moz-transition-property : bottom;
+            -webkit-transition-property : bottom;
             transition-property : bottom;
             position            : absolute;
             z-index             : 3;

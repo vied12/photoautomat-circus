@@ -100,13 +100,17 @@ class Photoautomat extends serious.Widget
     getPhoto: =>
         positif = $("<div>")
             .addClass("positif")
-        for pic_canvas in @photoTaken
-            img = new Image()
-            img.src = pic_canvas.toDataURL("image/png")
-            positif.append(img)
-        if positif.length < 4
-            for i in [0..(4-positif.length)] by 1
-                positif.prepend($(img).clone())
+        if @photoTaken.length < 1
+            for i in [1..4] by 1
+                positif.append($("<div style='background-color:#C6C6C6; whidth:#{@CONFIG.default_size[0]}px; height:#{@CONFIG.default_size[1]}px;'>"))
+        else
+            for pic_canvas in @photoTaken
+                img = new Image()
+                img.src = pic_canvas.toDataURL("image/png")
+                positif.append(img)
+            if positif.find("> *").length < 4
+                for i in [1..(4 - positif.find("> *").length)] by 1
+                    positif.prepend($(img).clone())
         return positif
 
 # EOF

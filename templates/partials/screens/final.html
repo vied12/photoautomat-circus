@@ -1,25 +1,27 @@
 <div class="Final screen widget" data-widget="Final" >
 
-<div class="left">
-    <div class="Final__receptacle">
-		<div class="Final__receptacle__photo"></div>
-        <img src="{{ url_for("static", filename="images/receptacle.png") }}" alt="" />
+    <div class="left">
+        <div class="Final__receptacle">
+            <div class="Final__receptacle__photo"></div>
+            <img src="{{ url_for("static", filename="images/receptacle.png") }}" alt="" />
+        </div>
+
+
     </div>
 
-
-</div>
-
-<div class="right">
-    <h2>Congratulations!</h2>
-    <p>You have made it to the end of Photoautomat Circus. Now you may collect and share your photos. Thanks for visiting our site. Please tell your friends to drop by!</p>
-    
-    <div class="">
-        <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?url={{ url_for("index", _external=True) }}&hashtags=DokHackBerlin">Twitter +
-        </a>
-        <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url_for("index", _external=True) }}">Facebook +
-        </a>
+    <div class="right">
+        <div class="Final__sandbox"></div>
+        <div class="Final__photo"></div>
+        <div class="Final__body">
+        <h2>Congratulations!</h2>
+        <p>You have made it to the end of Photoautomat Circus. Now you may collect and share your photos. Thanks for visiting our site. Please tell your friends to drop by!</p>
+        
+            <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?url={{ url_for("index", _external=True) }}&hashtags=DokHackBerlin">Twitter +
+            </a>
+            <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url_for("index", _external=True) }}">Facebook +
+            </a>
+        </div>
+       <div class="credits"><a data-bind="click: about" href="#">about</a></div> 
     </div>
-   <div class="credits"><a data-bind="click: about" href="#">credits</a></div> 
-</div>
 
 </div>

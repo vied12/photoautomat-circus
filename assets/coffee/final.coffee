@@ -29,6 +29,8 @@ class Final extends serious.Widget
         @UIS = 
             receptacle : ".Final__receptacle"
             photo      : ".Final__receptacle__photo"
+            final_photo: ".Final__photo"
+            sandbox    : ".Final__sandbox"
 
     bindUI: =>
         @ko = yes
@@ -39,11 +41,19 @@ class Final extends serious.Widget
     onArrive: =>
         photo = @photoautomatWidget.getPhoto()
         @uis.photo
-            .hide()
             .css("bottom":300)
             .html(photo)
         setTimeout(=>
-            @uis.photo.show().css("bottom":30)
-        ,2000)
+            @uis.photo.css("bottom":30)
+            setTimeout(=>
+                @uis.sandbox.html(@uis.photo.clone()).css("display", "block")
+                html2canvas @uis.sandbox.get(0),
+                    allowTaint :true,
+                    useCORS    :true,
+                    onrendered: (canvas) =>
+                        @uis.sandbox.css("display", "none")
+                        @uis.final_photo.hide().html(canvas).fadeIn(1000)
+            ,2000)
+        ,3000)
 
 # EOF
