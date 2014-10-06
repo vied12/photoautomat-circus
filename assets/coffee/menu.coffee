@@ -33,18 +33,11 @@ class Menu extends serious.Widget
         # get the widget instances
         @navigation = serious.Widget.ensureWidget(".Navigation")
         # init the menu
-        # @relayout()
         @close()
         # define scope available in the template
         @scope.toggle    = @toggle
         @scope.mute      = @mute
-        @scope.see_movie = @seeMovie
-        @scope.about     = @about
-        # bind events
-        # $(window).resize(@relayout)
-
-    # relayout: =>
-    #     @ui.height($(window).height())
+        @scope.go_to     = @goTo
 
     open: =>
         @ui.css
@@ -68,15 +61,11 @@ class Menu extends serious.Widget
         else
             @open()
 
-    seeMovie: (movie_id) =>
-        @navigation.goToScreen("Kino", movie_id)
+    goTo: (page_id, params) =>
+        @navigation.goToScreen(page_id, params)
         @close()
 
     mute: =>
         console.log "mute ta yeule!"
-
-    about: =>
-        @navigation.goToScreen("About")
-        @close()
 
 # EOF
