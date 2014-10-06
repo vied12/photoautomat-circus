@@ -13,10 +13,8 @@
     .right {
         position: absolute;
         width: 50%;
-        height: 100%;
         right: 0;
-        top: 0;
-        padding: 15% 5%;
+        top: 20%;
         color: white;
     }
     
@@ -36,5 +34,11 @@
         color: $red;
     }
     
+    .contact {
+        img {
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+    }
     
 }
