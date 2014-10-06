@@ -14,14 +14,9 @@
     <p>You have made it to the end of Photoautomat Circus. Now you may collect and share your photos. Thanks for visiting our site. Please tell your friends to drop by!</p>
     
     <div class="">
-        <a class="btn email" href="#">Email +
-       <!-- <span class=""><img src="{{ url_for("static", filename="images/paperplane.svg") }}" /></span>-->
+        <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?url={{ url_for("index", _external=True) }}&hashtags=DokHackBerlin">Twitter +
         </a>
-        <a class="btn twitter" href="#">Twitter +
-        <!-- <span class=""><img src="{{ url_for("static", filename="images/twitter.svg") }}" /></span> -->
-        </a>
-        <a class="btn facebook" href="#">Facebook +
-        <!-- <span class=""><img src="{{ url_for("static", filename="images/facebook.svg") }}" /></span> -->
+        <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url_for("index", _external=True) }}">Facebook +
         </a>
     </div>
    <div class="credits"><a data-bind="click: about" href="#">credits</a></div> 
