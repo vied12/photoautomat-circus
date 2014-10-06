@@ -32,10 +32,15 @@ class Intro extends serious.Widget
 
     bindUI: =>
         @navigation = serious.Widget.ensureWidget(".Navigation")
-        @player     = $f(@uis.intro_movie_iframe.get(0))
+        @player     = $f(@ui.find("#Intro__video").get(0))
         @player.addEvent 'ready', =>
+            @player.addEvent('playProgress', @onPlayProgress)
             @player.addEvent 'finish' , =>
                 @navigation.nextScreen() unless @cancel
+
+    onPlayProgress: (data, id) =>
+        if data.seconds >= (data.duration - 0.01) or data.percent > .99
+            @navigation.nextScreen() unless @cancel
 
     onArrive: =>
         @cancel = no
