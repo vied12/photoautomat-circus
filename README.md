@@ -3,6 +3,8 @@ Photoautomat Circus
 
 Photoautomat Circus is a collaborative project made over three days as part of the [Dok Hackathon Berlin](http://www.netzdoku.org/2014/09/21/dok-hackathon-berlin/), _Oct. 3-5, 2014_.
 
+![cover](static/screenshot.png)
+
 ## Team Vier
 
 - Adrien Tasic - _Illustrator, Animator_
@@ -11,7 +13,6 @@ Photoautomat Circus is a collaborative project made over three days as part of t
 - Elizabeth Grenier _Filmmaker_
 - Rick Minnich - _Filmmaker_
 
-![cover](static/screenshot.png)
 
 ## Installation
 
