@@ -60,6 +60,9 @@ class Kino extends serious.Widget
             console.log e.message
         @player = null
         @uis.iframe.attr("src", "")
+        if @modal?
+            @modal.close()
+            @modal = undefined
 
     startVideo: (video_id) =>
         # update currentVideo
@@ -70,20 +73,22 @@ class Kino extends serious.Widget
         @player = $f(@uis.iframe.get(0))
         @player.addEvent 'ready', =>
             # bind some events
-            @player.addEvent('finish'      , @onFinish)
-            # player.addEvent('pause'       , @onPause)
-            # player.addEvent('playProgress', @onPlayProgress)
+            @player.addEvent('play' , @onPlay)
+            @player.addEvent('finish' , @onFinish)
             # start the video
             @player.api("play")
         # bind modal on button click
+        if @modal?
+            @modal.close()
+            @modal = undefined
         @uis.more.click =>
-            modal = serious.Widget.ensureWidget("#Modal__Video#{@currentVideo}")
-            modal.open()
+            @modal = serious.Widget.ensureWidget("#Modal__Video#{@currentVideo}")
+            @modal.open()
+            @player.api("pause")
 
-    openModal: () =>
-
-
-    onPlayProgress:(data, id) =>
+    onPlay: =>
+        if @modal?
+            @modal.close()
 
     onFinish: =>
         # remove the video from the screen
@@ -94,8 +99,6 @@ class Kino extends serious.Widget
             @startPhotoTransition()
         else
             @navigation.nextScreen()
-
-    onPause: =>
 
     startPhotoTransition: =>
         @photoautomatWidget.takeSnapshot =>
