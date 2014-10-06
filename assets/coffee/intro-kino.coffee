@@ -43,6 +43,7 @@ class IntroKino extends serious.Widget
             , 500)
 
     onArrive: =>
+        $("body").removeClass("without-navigation")
         @photoautomatWidget.askPermission()
         @uis.sound_cabine.get(0).play()
         @modal.open()
