@@ -14,6 +14,7 @@ https://github.com/vied12/photoautomat-circus
 - Olivier Guillard - _Webdesigner_
 - Elizabeth Grenier _Filmmaker_
 - Rick Minnich - _Filmmaker_
+- Olivier Chardin - _Musik_
 
 
 ## Installation
