@@ -3,7 +3,7 @@ Photoautomat Circus
 
 Photoautomat Circus is a collaborative project made over three days as part of the [Dok Hackathon Berlin](http://www.netzdoku.org/2014/09/21/dok-hackathon-berlin/), _Oct. 3-5, 2014_.
 
-https://github.com/vied12/photoautomat-circus
+http://vied12.github.io/photoautomat-circus/
 
 ![cover](static/screenshot.png)
 
