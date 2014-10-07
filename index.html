@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8"></meta>
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" type="image/jpg" href="static/images/favicon.png" />
+		<meta property="og:image" content="http://vied12.github.io/photoautomat-circus/static/screenshot.png"/>
+		<meta property="og:title" content="Photoautomat Circus"/>
+		<meta property="og:type" content="website"/>
+
+
+		<title>Photoautomat Circus</title>
+
+		
+<link rel='stylesheet' href='/photoautomat-circus/static/gen/style.css?1412631212' type='text/css' />
+
+
+<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+
+	</head>
+
+	<body class="use-base loading without-navigation">
+
+		
+
+<div class="Navigation widget" data-widget="Navigation">
+	
+	<div class="Header">
+<div id="logo"><a href="/"><img width="137px" height="50px" src="/photoautomat-circus/static/images/logo.svg" alt="LOGO" /></a></div>
+</div>
+	
+<div class="Menu widget" data-widget="Menu">
+	<a class="Menu__toggle" href="#" data-bind="click: toggle">
+		<div class="patty"></div>
+	</a>
+	<div class="Menu__panel">
+		<ul>
+			
+			<li><a data-bind="click: go_to.bind($data, 'Kino', 0)" href="#">
+			        <img src="/photoautomat-circus/static/images/portrait2.jpg" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
+			
+			<li><a data-bind="click: go_to.bind($data, 'Kino', 1)" href="#">
+        			<img src="/photoautomat-circus/static/images/portrait1.jpg" alt="" />
+        	<div class="overlay">
+        			<span class="video-ico"></span>
+    			</div>
+			</a></li> 
+
+			<li><a data-bind="click: go_to.bind($data, 'Kino', 2)" href="#">
+			        <img src="/photoautomat-circus/static/images/portrait3.jpg" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
+			
+			<li><a data-bind="click: go_to.bind($data, 'Comingsoon')" href="#">
+			        <img src="/photoautomat-circus/static/images/portrait4.jpg" alt="" />
+			    <div class="overlay">
+			        <span class="video-ico"></span>
+			    </div>
+			</a></li>
+		</ul>
+		<div class="small">
+		    <a class="icon"  href="#"><img width="16px" height="16px" src="/photoautomat-circus/static/images/expand.svg" alt="full screen" /></a>
+		    <a class="icon" data-bind="click: mute" href="#"><img width="16px" height="16px" src="/photoautomat-circus/static/images/volume-mute.svg" alt="mute" /></a>
+		    <a class="icon" data-bind="click: go_to.bind($data, 'About')" href="#"><img width="16px" height="16px" src="/photoautomat-circus/static/images/about.svg" alt="about" /></a>
+		</div>
+	</div>
+</div>
+
+	<!-- screens -->
+	<style type="text/css">
+
+
+.Loader img{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+</style>
+
+<div class="Loader screen">
+	<img src="/photoautomat-circus/static/images/photo_load.svg"/>
+</div>
+	<div class="Intro widget screen" data-widget="Intro">
+	<iframe id="Intro__video" src="//player.vimeo.com/video/108015148?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=Intro__video" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+	
+	<div class="Intro-kino screen widget" data-widget="IntroKino">
+
+	<audio id="Intro-kino__sound__cabine" src="/photoautomat-circus/static/sounds/atmo_cabine.ogg" preload="auto"></audio>
+	<audio id="Intro-kino__sound__argent" src="/photoautomat-circus/static/sounds/argent.ogg" preload="auto"></audio>
+
+	<div class="Photoautomat__mirror"></div>
+
+	<div class="Photoautomat__kino-button" data-bind="click: next"></div>
+
+</div>
+	<div class="widget Kino screen" data-widget="Kino">
+	<div class="Kino__screener">
+		<iframe id="Kino_iframe" src="" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<div class="Kino__more">&#43;</div>
+	</div>
+</div>
+	<div class="Comingsoon screen widget" data-widget="Comingsoon" >
+<div class="title">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 505.5 42.7" enable-background="new 0 0 505.5 42.7" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M19.8,42.7H16L4.6,11.1v31.6H0V0h5.1l10.2,28.8V0h4.6V42.7z"/>
+	<path fill="#FFFFFF" d="M44.9,42.7H28.1V0h16.8v4.6H32.7v13.3h9.2v4.6h-9.2v15.8h12.2V42.7z"/>
+	<path fill="#FFFFFF" d="M74.2,42.7H69l-7.6-18l-7.5,18h-5.3l10.2-22.3L49.6,0h5l6.8,16.1L68.3,0h4.9l-9.2,20.4L74.2,42.7z"/>
+	<path fill="#FFFFFF" d="M97.8,4.6h-7.6v38.2h-4.6V4.6H78V0h19.8V4.6z"/>
+	<path fill="#FFFFFF" d="M135.1,4.6h-12.2v13.3h9.2v4.6h-9.2v20.3h-4.6V0h16.8V4.6z"/>
+	<path fill="#FFFFFF" d="M146.4,42.7h-4.6V0h4.6V42.7z"/>
+	<path fill="#FFFFFF" d="M171.4,42.7h-16.8V0h4.6v38.2h12.2V42.7z"/>
+	<path fill="#FFFFFF" d="M205.2,42.7h-4.6V10.3l-8.1,29.4h-2l-7.9-29.4v32.5h-4.6V0h6.2l7.3,27L199,0h6.2V42.7z"/>
+	<path fill="#FFFFFF" d="M247,36.6c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1v5.4h-4.6V6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v30.5c0,0.9,0.6,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5v-5.4h4.6V36.6z"/>
+	<path fill="#FFFFFF" d="M275.1,36.6c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1V36.6z M270.5,6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v30.5c0,0.9,0.6,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5V6.1z"/>
+	<path fill="#FFFFFF" d="M310.4,42.7h-4.6V10.3l-8.1,29.4h-2l-7.9-29.4v32.5h-4.6V0h6.2l7.3,27l7.5-27h6.2V42.7z"/>
+	<path fill="#FFFFFF" d="M323.2,42.7h-4.6V0h4.6V42.7z"/>
+	<path fill="#FFFFFF" d="M351.3,42.7h-3.8l-11.4-31.6v31.6h-4.6V0h5.1l10.2,28.8V0h4.6V42.7z"/>
+	<path fill="#FFFFFF" d="M379.4,36.6c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1v6.1h-4.6V6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v30.5c0,0.9,0.6,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5V25.5h-5.4v-4.6h10V36.6z"/>
+	<path fill="#FFFFFF" d="M416.7,30.5c0-0.9-0.2-1.5-0.7-2l-12.5-12.4c-1.3-1.2-2.1-3.2-2.1-5.3V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1v6.1h-4.6V6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v4.7c0,0.8,0.2,1.5,0.7,2l12.5,12.4
+		c1.3,1.2,2.1,3.2,2.1,5.4v6.1c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1v-6.1h4.6v6.1c0,0.9,0.7,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5V30.5z"/>
+	<path fill="#FFFFFF" d="M449.3,36.6c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1V36.6z M444.8,6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v30.5c0,0.9,0.6,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5V6.1z"/>
+	<path fill="#FFFFFF" d="M477.4,36.6c0,3.4-2.7,6.1-6.1,6.1h-7.6c-3.4,0-6.1-2.7-6.1-6.1V6.1c0-3.4,2.7-6.1,6.1-6.1h7.6
+		c3.4,0,6.1,2.7,6.1,6.1V36.6z M472.9,6.1c0-0.9-0.6-1.5-1.5-1.5h-7.6c-0.9,0-1.5,0.6-1.5,1.5v30.5c0,0.9,0.6,1.5,1.5,1.5h7.6
+		c0.9,0,1.5-0.6,1.5-1.5V6.1z"/>
+	<path fill="#FFFFFF" d="M505.5,42.7h-3.8l-11.4-31.6v31.6h-4.6V0h5.1L501,28.8V0h4.6V42.7z"/>
+</g>
+</svg>
+</div>
+</div>
+	<div class="Final screen widget" data-widget="Final" >
+
+    <div class="left">
+        <div class="Final__receptacle">
+            <div class="Final__receptacle__photo"></div>
+            <img src="/photoautomat-circus/static/images/receptacle.png" alt="" />
+        </div>
+
+
+    </div>
+
+    <div class="right">
+        <div class="Final__sandbox"></div>
+        <div class="Final__photo"></div>
+        <div class="Final__body">
+        <h2>Congratulations!</h2>
+        <p>You have made it to the end of Photoautomat Circus. Now you may collect and share your photos. Thanks for visiting our site. Please tell your friends to drop by!</p>
+        
+            <a class="btn twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://vied12.github.io/photoautomat-circus/&hashtags=DokHackBerlin">Twitter +
+            </a>
+            <a class="btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://vied12.github.io/photoautomat-circus/">Facebook +
+            </a>
+        </div>
+       <div class="credits"><a data-bind="click: about" href="#">about</a></div> 
+    </div>
+
+</div>
+	<div class="About screen">
+    <div class="left"></div>
+    
+    <div class="right">
+        <h2>About</h2>
+        <p>Photoautomat Circus is a collaborative project made over three days as part of the <a href="http://www.netzdoku.org/2014/09/21/dok-hackathon-berlin/" target="_blank">Dok Hackathon Berlin</a>, Oct. 3-5, 2014.</p>
+    
+    
+        <h2>Team Members</h2>
+            <ul>
+                <li>Adrien Tasic - <span class="">Illustrator, Animator</span></li>
+                <li>Edouard Richard - <span class="">Developer</span></li> 
+                <li>Olivier Guillard - <span class="">Webdesigner</span></li>
+                <li>Elizabeth Grenier <span class="">Filmmaker</span></li>
+                <li>Rick Minnich - <span class="">Filmmaker</span></li>
+                <li>Olivier Chardin - <span class="">Musik</span></li>
+            </ul>
+
+
+        <div class="contact">
+            <a href="https://github.com/vied12/photoautomat-circus"><img src="/photoautomat-circus/static/images/github.png">Give us feedback and grab the code</a>
+        </div>
+
+    </div>
+
+</div>
+
+	<div class="widget Photoautomat hidden" data-widget="Photoautomat">
+	<audio id="Photoautomat__sound__flash" src="/photoautomat-circus/static/sounds/flash.ogg" preload="auto"></audio>
+
+	<div class="Photoautomat__mirror off"></div>
+	<div class="Photoautomat__mirror on"></div>
+
+	<div class="Photoautomat__kino-button"></div>
+
+	<div class="Photoautomat__flash hidden"></div>
+
+</div>
+	<div class="Modal widget hidden" id="Modal__intro-kino" data-widget="Modal">
+	<div class="Modal__overlay" data-bind="{click: close}"></div>
+	<div class="Modal__body">
+		<p>Welcome to the wonderful world of the photo booth!<br />
+			This interactive documentary lasts approximately 10 minutes. <br>
+		To fully experience this web doc, we will need to use your webcam. A surprise awaits you at the end! 
+Please note: The images created will only be stored locally on your browser and will not be transmitted to anyone.</p>
+		<a class="btn" data-bind="{click: close}">Continue &#8594;</a>
+		<a class="close-reveal-modal" data-bind="{click: close}">&#215;</a>
+	</div>
+</div>
+
+<div class="Side-modal widget hidden" id="Modal__Video0" data-widget="Modal">
+	<div class="Side-modal__body">
+		<h2>Cult Status</h2>
+		<p>Andy Warhol’s first self-portrait, from 1963, reproduces 4 pictures of him taken in a photo booth. It was sold for over 38 million dollars in 2011.</p>
+		<a class="close-reveal-modal" data-bind="{click: close}">&#215;</a>
+	</div>
+</div>
+
+<div class="Side-modal widget hidden" id="Modal__Video1" data-widget="Modal">
+	<div class="Side-modal__body">
+		<h2>Origins</h2>
+		<p>The first photographic machine was shown at the World Fair in Paris in 1889. A modern version of the photo booth appeared in New York City in 1925. It cost 25 cents and took 10 minutes to get 8 photos. Within a half a year, 280,000 people got their picture taken.</p>
+		<a class="close-reveal-modal" data-bind="{click: close}">&#215;</a>
+	</div>
+</div>
+
+<div class="Side-modal widget hidden" id="Modal__Video2" data-widget="Modal">
+	<div class="Side-modal__body">
+		<h2>Photoautomat</h2>
+		<p>There are 25 vintage photo booths in Berlin. Five of them are on the Warschauer Strasse in Friedrichshain. They can also be found in Hamburg, Köln, Leipzig, London, Florence and Vienna.</p>
+		<a class="close-reveal-modal" data-bind="{click: close}">&#215;</a>
+	</div>
+</div>
+
+</div>
+
+
+
+		
+<script type='text/javascript' src='/photoautomat-circus/static/gen/scripts.js?1412627345'></script>
+
+<script>
+	$(document).ready(function() {
+		serious.Widget.bindAll();
+		$(document).foundation();
+		var files = [
+			"static/images/button_on.png",
+			"static/images/button.png",
+			"static/images/mirror-on.png",
+			"static/images/mirror.png",
+			"static/images/about.jpg",
+			"static/images/receptacle.png",
+			"static/images/portrait1.jpg",
+			"static/images/portrait2.jpg",
+			"static/images/portrait3.jpg",
+			"static/images/portrait4.jpg",
+			"static/images/receptacle-bg.png",
+			"static/images/logo.svg",
+			"static/images/googleplus.svg",
+			"static/images/twitter.svg",
+			"static/images/volume-medium.svg",
+			"static/images/paperplane.svg",
+			"static/images/share.svg",
+			"static/images/play.svg",
+			"static/images/expand.svg",
+			"static/images/volume-mute.svg",
+			"static/images/facebook.svg",
+			"static/images/about.svg",
+			"static/sounds/argent.ogg",
+			"static/sounds/atmo_cabine.ogg",
+		]
+		$.preload(files, function() {
+			Navigation.Instance.itsReady();
+		});
+	});
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-55465670-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+		
+
+	</body>
+</html>
