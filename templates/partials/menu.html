@@ -7,37 +7,37 @@
 		<ul>
 			
 			<li><a data-bind="click: go_to.bind($data, 'Kino', 0)" href="#">
-			        <img src="{{ url_for("static", filename="images/portrait2.jpg") }}" alt="" />
+			        <img src="{{ url_for("static", filename="images/portrait2.jpg") | relative_url }}" alt="" />
 			    <div class="overlay">
 			        <span class="video-ico"></span>
 			    </div>
 			</a></li>
 			
 			<li><a data-bind="click: go_to.bind($data, 'Kino', 1)" href="#">
-        			<img src="{{ url_for("static", filename="images/portrait1.jpg") }}" alt="" />
+        			<img src="{{ url_for("static", filename="images/portrait1.jpg") | relative_url }}" alt="" />
         	<div class="overlay">
         			<span class="video-ico"></span>
     			</div>
 			</a></li> 
 
 			<li><a data-bind="click: go_to.bind($data, 'Kino', 2)" href="#">
-			        <img src="{{ url_for("static", filename="images/portrait3.jpg") }}" alt="" />
+			        <img src="{{ url_for("static", filename="images/portrait3.jpg") | relative_url }}" alt="" />
 			    <div class="overlay">
 			        <span class="video-ico"></span>
 			    </div>
 			</a></li>
 			
 			<li><a data-bind="click: go_to.bind($data, 'Comingsoon')" href="#">
-			        <img src="{{ url_for("static", filename="images/portrait4.jpg") }}" alt="" />
+			        <img src="{{ url_for("static", filename="images/portrait4.jpg") | relative_url }}" alt="" />
 			    <div class="overlay">
 			        <span class="video-ico"></span>
 			    </div>
 			</a></li>
 		</ul>
 		<div class="small">
-		    <a class="icon"  href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/expand.svg") }}" alt="full screen" /></a>
-		    <a class="icon" data-bind="click: mute" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/volume-mute.svg") }}" alt="mute" /></a>
-		    <a class="icon" data-bind="click: go_to.bind($data, 'About')" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/about.svg") }}" alt="about" /></a>
+		    <a class="icon"  href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/expand.svg") | relative_url }}" alt="full screen" /></a>
+		    <a class="icon" data-bind="click: mute" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/volume-mute.svg") | relative_url }}" alt="mute" /></a>
+		    <a class="icon" data-bind="click: go_to.bind($data, 'About')" href="#"><img width="16px" height="16px" src="{{ url_for("static", filename="images/about.svg") | relative_url }}" alt="about" /></a>
 		</div>
 	</div>
 </div>
