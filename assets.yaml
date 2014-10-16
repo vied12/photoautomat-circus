@@ -6,7 +6,7 @@ css_all:
     - "../static/vendors/loader.css"
     - contents:
       - "../assets/scss/base.scss"
-      filters: scss
+      filters: libsass
       depends: "../assets/**/*.scss"
       output: gen/sass.css
       debug : false
